@@ -9,5 +9,6 @@ namespace Proyecto_Final
     class Classprueba
     {
         char v;
+        char d;
     }
 }
