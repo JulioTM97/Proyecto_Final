@@ -23,14 +23,13 @@ namespace Proyecto_Final.Datos
             //{
                 ds = new DataSet();
             //añadido, eliminar si da error.
-                lines = System.IO.File.ReadAllLines(@"C:\Users\Julio\Documents\Acádemico\Proyecto Final\Sistema\Proyecto Final\Proyecto Final\Connection_String.txt");
-               
+            //    lines = System.IO.File.ReadAllLines(@"C:\Users\Julio\Documents\Acádemico\Proyecto Final\Sistema\Proyecto Final\Proyecto Final\Connection_String.txt");
             //fin del añadido.
-
             //esta linea iba
             //SqlConnection cn = new SqlConnection(ConfigurationManager.AppSettings.Get("connectionString"));
             //Esta linea modifique
-            SqlConnection cn = new SqlConnection(lines[0]);
+            string connectionString = @"Data Source = CentroEducativo.mssql.somee.com; Initial Catalog = CentroEducativo; User Id = JulioTM_SQLLogin_1; Password = 58k6vflf41;";
+            SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
 				cmd.CommandTimeout = 600;
                 
