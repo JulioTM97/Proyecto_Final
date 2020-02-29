@@ -1,0 +1,1 @@
+﻿Data Source=CentroEducativo.mssql.somee.com;Initial Catalog=CentroEducativo;User Id=JulioTM_SQLLogin_1; Password=58k6vflf41;
