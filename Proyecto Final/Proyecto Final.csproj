@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classprueba.cs" />
     <Compile Include="Datos\FDBHelper.cs" />
     <Compile Include="Datos\FGrado.cs" />
     <Compile Include="Datos\FInstitucion.cs" />
