@@ -10,5 +10,6 @@ namespace Proyecto_Final
     {
         char v;
         char d;
+        char b;
     }
 }
