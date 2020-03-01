@@ -13,7 +13,7 @@ namespace Proyecto_Final.Datos
         static string[] lines;
         public FDBHelper()
         {
-          
+
         }
 
         public static DataSet ExecuteDataSet(string sqlSpName, SqlParameter[] dbParams)
@@ -21,30 +21,29 @@ namespace Proyecto_Final.Datos
             DataSet ds = null;
             //try
             //{
-                ds = new DataSet();
+            ds = new DataSet();
             //añadido, eliminar si da error.
-                lines = System.IO.File.ReadAllLines(@"C:\Users\Julio\Documents\Acádemico\Proyecto Final\Sistema\Proyecto Final\Proyecto Final\Connection_String.txt");
-               
+            //    lines = System.IO.File.ReadAllLines(@"C:\Users\Julio\Documents\Acádemico\Proyecto Final\Sistema\Proyecto Final\Proyecto Final\Connection_String.txt");
             //fin del añadido.
-
             //esta linea iba
             //SqlConnection cn = new SqlConnection(ConfigurationManager.AppSettings.Get("connectionString"));
             //Esta linea modifique
-            SqlConnection cn = new SqlConnection(lines[0]);
+            string connectionString = @"Data Source = CentroEducativo.mssql.somee.com; Initial Catalog = CentroEducativo; User Id = JulioTM_SQLLogin_1; Password = 58k6vflf41;";
+            SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
-				cmd.CommandTimeout = 600;
-                
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
+            cmd.CommandTimeout = 600;
 
-                if (dbParams != null)
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            if (dbParams != null)
+            {
+                foreach (SqlParameter dbParam in dbParams)
                 {
-                    foreach (SqlParameter dbParam in dbParams)
-                    {
-                        da.SelectCommand.Parameters.Add(dbParam);
-                    }
+                    da.SelectCommand.Parameters.Add(dbParam);
                 }
-                da.Fill(ds);
+            }
+            da.Fill(ds);
             //}
             //catch (Exception)
             //{
