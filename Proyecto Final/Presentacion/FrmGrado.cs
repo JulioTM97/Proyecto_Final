@@ -175,7 +175,5 @@ namespace Proyecto_Final.Presentacion
                 txtGrado.Text = dgvGrado.CurrentRow.Cells["NOMBRE"].Value.ToString();
             }
         }
-
-
     }
 }

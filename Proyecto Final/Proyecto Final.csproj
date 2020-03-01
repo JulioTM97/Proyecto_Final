@@ -61,43 +61,49 @@
     <Compile Include="Presentacion\FrmAsignatura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\FrmAsignatura.Designer.cs">
+    <Compile Include="Presentacion\FrmAsignatura.designer.cs">
       <DependentUpon>FrmAsignatura.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmGrado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\FrmGrado.Designer.cs">
+    <Compile Include="Presentacion\FrmGrado.designer.cs">
       <DependentUpon>FrmGrado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmInicio.designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmInstitucion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\FrmInstitucion.Designer.cs">
+    <Compile Include="Presentacion\FrmInstitucion.designer.cs">
       <DependentUpon>FrmInstitucion.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\FrmLogin.Designer.cs">
+    <Compile Include="Presentacion\FrmLogin.designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\FrmPrincipal.Designer.cs">
+    <Compile Include="Presentacion\FrmPrincipal.designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmSeccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\FrmSeccion.Designer.cs">
+    <Compile Include="Presentacion\FrmSeccion.designer.cs">
       <DependentUpon>FrmSeccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\FrmUsuario.Designer.cs">
+    <Compile Include="Presentacion\FrmUsuario.designer.cs">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmGrado.resx">
       <DependentUpon>FrmGrado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmInicio.resx">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmInstitucion.resx">
       <DependentUpon>FrmInstitucion.cs</DependentUpon>
