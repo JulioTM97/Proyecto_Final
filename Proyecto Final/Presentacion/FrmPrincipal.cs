@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Proyecto_Final.Entidades;
 using Proyecto_Final.Datos;
 using Proyecto_Final.Presentacion;
+using System.Runtime.InteropServices;
+
 
 namespace Proyecto_Final.Presentacion
 {
@@ -17,9 +19,11 @@ namespace Proyecto_Final.Presentacion
     {
         FrmLogin frmLogin;
         Usuario usuario;
-        public FrmPrincipal() {
+        public FrmPrincipal()
+        {
             InitializeComponent();
         }
+
         public FrmPrincipal(FrmLogin _frmLogin, Usuario _usuario)
         {
             InitializeComponent();
@@ -27,59 +31,123 @@ namespace Proyecto_Final.Presentacion
             usuario = _usuario;
         }
 
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            if (MenuVertical.Width == 250)
+            {
+                MenuVertical.Width = 70;
+            }
+            else
+                MenuVertical.Width = 250;
+        }
+
+        private void iconcerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void iconmaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            iconrestaurar.Visible = true;
+            iconmaximizar.Visible = false;
+        }
+
+        private void iconrestaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            iconrestaurar.Visible = false;
+            iconmaximizar.Visible = true;
+        }
+
+        private void iconminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        } 
+        
+        private void label2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void AbrirFormEnPanel(object Formhijo)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            Form fh = Formhijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(fh);
+            this.panelContenedor.Tag = fh;
+            fh.Show();
+        }
+
+        // Para mostrar los datos del Usuario           
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+             txtNombre.Text = usuario.nombre;
+             txtCedula.Text = usuario.cedula;
+             txtTelefono.Text = usuario.telefono;
+             txtCorreo.Text = usuario.correo;
+             txtTipo.Text = usuario.rol;
+             txtUsername.Text = usuario.username;
+        }
+
+        private void Mostrar_Formulario_Inicio_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new FrmInicio());
+        }
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                usuario.id + Environment.NewLine +
-                usuario.cedula + Environment.NewLine + 
-                usuario.correo + Environment.NewLine +
-                usuario.nombre + Environment.NewLine +
-                usuario.password + Environment.NewLine +
-                usuario.username + Environment.NewLine +
-                usuario.rol + Environment.NewLine +
-                usuario.telefono + Environment.NewLine 
-                ) ;
-            txtNombre.Text = usuario.nombre;
-            txtCedula.Text = usuario.cedula;
-            txtTelefono.Text = usuario.telefono;
-            txtCorreo.Text = usuario.correo;
-            txtTipo.Text = usuario.rol;
-            txtUsername.Text = usuario.username;
+            Mostrar_Formulario_Inicio_Click(null, e);
         }
 
-        private void personalDelCentroEducativoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btncp_Click(object sender, EventArgs e)
         {
-            FrmUsuario frmUsuario = new FrmUsuario();
-            frmUsuario.Show();
+            AbrirFormEnPanel(new FrmUsuario());
         }
 
-        private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        private void btncg_Click(object sender, EventArgs e)
         {
-            frmLogin.Close();
+            AbrirFormEnPanel(new FrmGrado());
         }
 
-        private void gradosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btncs_Click(object sender, EventArgs e)
         {
-            FrmGrado frmGrado = new FrmGrado();
-            frmGrado.Show();
+            AbrirFormEnPanel(new FrmSeccion());
         }
 
-        private void consultarSeccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btncd_Click(object sender, EventArgs e)
         {
-            FrmSeccion frmSeccion = new FrmSeccion();
-            frmSeccion.Show();
+            AbrirFormEnPanel(new FrmInstitucion());
         }
 
-        private void consultarDatosDeInstitucionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnca_Click(object sender, EventArgs e)
         {
-            FrmInstitucion frmInstitucion = new FrmInstitucion();
-            frmInstitucion.Show();
+            AbrirFormEnPanel(new FrmAsignatura());
         }
 
-        private void consultarAsignaturasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void lblogo_Click(object sender, EventArgs e)
         {
-            FrmAsignatura frmAsignatura = new FrmAsignatura();
-            frmAsignatura.Show();
+            AbrirFormEnPanel(new FrmInicio());
+        }
+
+        private void MenuVertical_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

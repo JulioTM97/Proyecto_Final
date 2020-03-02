@@ -57,7 +57,17 @@ namespace Proyecto_Final
                 txtUsuario.Clear();
                 txtContraseña.Clear();
             }
-
+            // Para mostrar datos del usuario en un form pequeño
+            MessageBox.Show(
+                   usuario.id + Environment.NewLine +
+                   usuario.cedula + Environment.NewLine +
+                   usuario.correo + Environment.NewLine +
+                   usuario.nombre + Environment.NewLine +
+                   usuario.password + Environment.NewLine +
+                   usuario.username + Environment.NewLine +
+                   usuario.rol + Environment.NewLine +
+                   usuario.telefono + Environment.NewLine
+                   );
         }
 
         private void txtContraseña_KeyDown(object sender, KeyEventArgs e)
@@ -68,6 +78,11 @@ namespace Proyecto_Final
         private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) SendKeys.Send("{TAB}");
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

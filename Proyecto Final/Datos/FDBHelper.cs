@@ -10,10 +10,10 @@ namespace Proyecto_Final.Datos
 {
     public class FDBHelper
     {
-        static string[] lines;
+        static string connectionString = @"Data Source = CentroEducativo.mssql.somee.com; Initial Catalog = CentroEducativo; User Id = JulioTM_SQLLogin_1; Password = 58k6vflf41;";
         public FDBHelper()
         {
-          
+
         }
 
         public static DataSet ExecuteDataSet(string sqlSpName, SqlParameter[] dbParams)
@@ -21,29 +21,23 @@ namespace Proyecto_Final.Datos
             DataSet ds = null;
             //try
             //{
-                ds = new DataSet();
-            //añadido, eliminar si da error.
-            //    lines = System.IO.File.ReadAllLines(@"C:\Users\Julio\Documents\Acádemico\Proyecto Final\Sistema\Proyecto Final\Proyecto Final\Connection_String.txt");
-            //fin del añadido.
-            //esta linea iba
-            //SqlConnection cn = new SqlConnection(ConfigurationManager.AppSettings.Get("connectionString"));
-            //Esta linea modifique
-            string connectionString = @"Data Source = CentroEducativo.mssql.somee.com; Initial Catalog = CentroEducativo; User Id = JulioTM_SQLLogin_1; Password = 58k6vflf41;";
+            ds = new DataSet();
+            
             SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
-				cmd.CommandTimeout = 600;
-                
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
+            cmd.CommandTimeout = 600;
 
-                if (dbParams != null)
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            if (dbParams != null)
+            {
+                foreach (SqlParameter dbParam in dbParams)
                 {
-                    foreach (SqlParameter dbParam in dbParams)
-                    {
-                        da.SelectCommand.Parameters.Add(dbParam);
-                    }
+                    da.SelectCommand.Parameters.Add(dbParam);
                 }
-                da.Fill(ds);
+            }
+            da.Fill(ds);
             //}
             //catch (Exception)
             //{
@@ -54,7 +48,7 @@ namespace Proyecto_Final.Datos
 
         public static bool ExecuteXml(string sqlSpName, SqlParameter[] dbParams, System.Xml.XmlDocument dXml)
         {
-            SqlConnection cn = new SqlConnection(lines[0]);
+            SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
             cmd.CommandTimeout = Convert.ToInt16(ConfigurationManager.AppSettings.Get("connectionCommandTimeout"));
             cmd.CommandType = CommandType.StoredProcedure;
@@ -95,7 +89,7 @@ namespace Proyecto_Final.Datos
         {
             SqlDataReader dr;
 
-            SqlConnection cn = new SqlConnection(lines[0]);
+            SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
             cmd.CommandTimeout = Convert.ToInt16(ConfigurationManager.AppSettings.Get("connectionCommandTimeout"));
             cmd.CommandType = CommandType.StoredProcedure;
@@ -122,7 +116,7 @@ namespace Proyecto_Final.Datos
 
         public static void ExecuteNonQuery(string sqlSpName, SqlParameter[] dbParams)
         {
-            SqlConnection cn = new SqlConnection(lines[0]);
+            SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
             cmd.CommandTimeout = Convert.ToInt16(ConfigurationManager.AppSettings.Get("connectionCommandTimeout"));
             cmd.CommandType = CommandType.StoredProcedure;
@@ -156,7 +150,7 @@ namespace Proyecto_Final.Datos
         public static object ExecuteScalar(string sqlSpName, SqlParameter[] dbParams)
         {
             object retVal = null;
-            SqlConnection cn = new SqlConnection(lines[0]);
+            SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
             cmd.CommandTimeout = Convert.ToInt16(ConfigurationManager.AppSettings.Get("connectionCommandTimeout"));
             cmd.CommandType = CommandType.StoredProcedure;
@@ -218,7 +212,7 @@ namespace Proyecto_Final.Datos
 
         public static int ExecuteNonQueryOutput(string sqlSpName, SqlParameter[] dbParams, string paramName, SqlDbType dbType, int size)
         {
-            SqlConnection cn = new SqlConnection(lines[0]);
+            SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
             cmd.CommandTimeout = Convert.ToInt16(ConfigurationManager.AppSettings.Get("connectionCommandTimeout"));
             cmd.CommandType = CommandType.StoredProcedure;
