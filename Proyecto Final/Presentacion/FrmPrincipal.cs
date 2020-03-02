@@ -82,12 +82,6 @@ namespace Proyecto_Final.Presentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void label1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
         private void AbrirFormEnPanel(object Formhijo)
         {
             if (this.panelContenedor.Controls.Count > 0)
@@ -103,12 +97,12 @@ namespace Proyecto_Final.Presentacion
         // Para mostrar los datos del Usuario           
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
         {
-              txtNombre.Text = usuario.nombre;
+             /* txtNombre.Text = usuario.nombre;
               txtCedula.Text = usuario.cedula;
               txtTelefono.Text = usuario.telefono;
               txtCorreo.Text = usuario.correo;
               txtTipo.Text = usuario.rol;
-              txtUsername.Text = usuario.username;      
+              txtUsername.Text = usuario.username;  */    
         }
 
         private void Mostrar_Formulario_Inicio_Click(object sender, EventArgs e)
@@ -147,7 +141,13 @@ namespace Proyecto_Final.Presentacion
 
         private void lblogo_Click(object sender, EventArgs e)
         {
-            Mostrar_Formulario_Inicio_Click(null, e);
+            AbrirFormEnPanel(new FrmInicio());
+        }
+
+        private void MenuVertical_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
