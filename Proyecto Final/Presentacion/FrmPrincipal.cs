@@ -97,12 +97,12 @@ namespace Proyecto_Final.Presentacion
         // Para mostrar los datos del Usuario           
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
         {
-             /* txtNombre.Text = usuario.nombre;
-              txtCedula.Text = usuario.cedula;
-              txtTelefono.Text = usuario.telefono;
-              txtCorreo.Text = usuario.correo;
-              txtTipo.Text = usuario.rol;
-              txtUsername.Text = usuario.username;  */    
+             txtNombre.Text = usuario.nombre;
+             txtCedula.Text = usuario.cedula;
+             txtTelefono.Text = usuario.telefono;
+             txtCorreo.Text = usuario.correo;
+             txtTipo.Text = usuario.rol;
+             txtUsername.Text = usuario.username;
         }
 
         private void Mostrar_Formulario_Inicio_Click(object sender, EventArgs e)
