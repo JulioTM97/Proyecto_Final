@@ -89,6 +89,7 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(250, 650);
             this.MenuVertical.TabIndex = 0;
+            this.MenuVertical.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuVertical_MouseDown);
             // 
             // label4
             // 
@@ -273,7 +274,6 @@
             this.lblogo.TabIndex = 0;
             this.lblogo.Text = "SGN";
             this.lblogo.Click += new System.EventHandler(this.lblogo_Click);
-            this.lblogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // btnca
             // 
