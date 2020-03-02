@@ -141,16 +141,22 @@ namespace Proyecto_Final.Presentacion
 
         private void btnEliminarAsignatura_Click(object sender, EventArgs e)
         {
+            if (dgvAsignatura.CurrentRow == null) return;
             Asignatura asignatura = new Asignatura();
             asignatura.id = Convert.ToInt32(txtID.Text);
+
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar la asignatura?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (dialogResult == DialogResult.No) return;
             try
             {
-                FAsignatura.Eliminar(asignatura);
+                if (FAsignatura.Eliminar(asignatura) > 0) MessageBox.Show("Eliminada con exito!");
+                else MessageBox.Show("La asignatura no se pudo eliminar.");
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message + exception.StackTrace);
             }
+            FrmAsignatura_Load(null, null);
         }
 
         private void Cambios(string opcion)
