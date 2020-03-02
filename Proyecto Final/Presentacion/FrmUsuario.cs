@@ -111,7 +111,7 @@ namespace Proyecto_Final.Presentacion
             else usuario.id = 0;
             usuario.nombre = txtNombre.Text;
             usuario.cedula = txtCedula.Text;
-            usuario.telefono = txtCorreo.Text;
+            usuario.telefono = txtTelefono.Text;
             usuario.correo = txtCorreo.Text;
             usuario.username = txtUsuario.Text;
             usuario.password = txtContraseña.Text;

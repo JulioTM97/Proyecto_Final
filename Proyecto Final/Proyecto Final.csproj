@@ -51,8 +51,10 @@
     <Compile Include="Datos\FGrado.cs" />
     <Compile Include="Datos\FInstitucion.cs" />
     <Compile Include="Datos\FLogin.cs" />
+    <Compile Include="Datos\FAsignatura.cs" />
     <Compile Include="Datos\FSeccion.cs" />
     <Compile Include="Datos\FUsuario.cs" />
+    <Compile Include="Entidades\Asignatura.cs" />
     <Compile Include="Entidades\Grado.cs" />
     <Compile Include="Entidades\Institucion.cs" />
     <Compile Include="Entidades\Seccion.cs" />
