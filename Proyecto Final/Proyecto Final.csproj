@@ -54,6 +54,7 @@
     <Compile Include="Datos\FAsignatura.cs" />
     <Compile Include="Datos\FSeccion.cs" />
     <Compile Include="Datos\FUsuario.cs" />
+    <Compile Include="Encriptar.cs" />
     <Compile Include="Entidades\Asignatura.cs" />
     <Compile Include="Entidades\Grado.cs" />
     <Compile Include="Entidades\Institucion.cs" />

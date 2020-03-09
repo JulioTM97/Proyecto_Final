@@ -114,7 +114,7 @@ namespace Proyecto_Final.Presentacion
             usuario.telefono = txtTelefono.Text;
             usuario.correo = txtCorreo.Text;
             usuario.username = txtUsuario.Text;
-            usuario.password = txtContraseña.Text;
+            usuario.password = Encriptar.GetSHA256(txtContraseña.Text);
             usuario.rol = txtTipo.Text;
             try
             {

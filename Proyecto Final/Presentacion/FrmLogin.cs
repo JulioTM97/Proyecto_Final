@@ -29,6 +29,7 @@ namespace Proyecto_Final
 
             DataSet ds = FLogin.ValidarLogin(usuario);
             DataTable dt = ds.Tables[0];
+
             if (dt.Rows.Count > 0)
             {
                 if (Convert.ToBoolean(dt.Rows[0]["ELIMINADO"]))
@@ -38,7 +39,7 @@ namespace Proyecto_Final
                     txtContraseña.Clear();
                     return;
 
-                }
+                };
                 usuario.id = Convert.ToInt32(dt.Rows[0]["ID"]);
                 usuario.nombre = dt.Rows[0]["NOMBRE"].ToString();
                 usuario.cedula = dt.Rows[0]["CEDULA"].ToString();
