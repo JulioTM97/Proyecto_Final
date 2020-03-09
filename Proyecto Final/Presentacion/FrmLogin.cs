@@ -25,7 +25,7 @@ namespace Proyecto_Final
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             usuario.username = txtUsuario.Text;
-            usuario.password = txtContraseña.Text;
+            usuario.password = Encriptar.GetSHA256(txtContraseña.Text);
 
             DataSet ds = FLogin.ValidarLogin(usuario);
             DataTable dt = ds.Tables[0];

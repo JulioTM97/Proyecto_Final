@@ -280,7 +280,7 @@
             this.btnca.FlatAppearance.BorderSize = 0;
             this.btnca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnca.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnca.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnca.ForeColor = System.Drawing.Color.White;
             this.btnca.Image = ((System.Drawing.Image)(resources.GetObject("btnca.Image")));
             this.btnca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -297,7 +297,7 @@
             this.btncd.FlatAppearance.BorderSize = 0;
             this.btncd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btncd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncd.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncd.ForeColor = System.Drawing.Color.White;
             this.btncd.Image = ((System.Drawing.Image)(resources.GetObject("btncd.Image")));
             this.btncd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -314,7 +314,7 @@
             this.btncs.FlatAppearance.BorderSize = 0;
             this.btncs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btncs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncs.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncs.ForeColor = System.Drawing.Color.White;
             this.btncs.Image = ((System.Drawing.Image)(resources.GetObject("btncs.Image")));
             this.btncs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -331,7 +331,7 @@
             this.btncg.FlatAppearance.BorderSize = 0;
             this.btncg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btncg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncg.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncg.ForeColor = System.Drawing.Color.White;
             this.btncg.Image = ((System.Drawing.Image)(resources.GetObject("btncg.Image")));
             this.btncg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -348,7 +348,7 @@
             this.btncp.FlatAppearance.BorderSize = 0;
             this.btncp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btncp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncp.ForeColor = System.Drawing.Color.White;
             this.btncp.Image = ((System.Drawing.Image)(resources.GetObject("btncp.Image")));
             this.btncp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -379,11 +379,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label2.Location = new System.Drawing.Point(166, 1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(533, 44);
+            this.label2.Size = new System.Drawing.Size(530, 42);
             this.label2.TabIndex = 6;
             this.label2.Text = "Sistema de Gestión de Notas";
             this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);

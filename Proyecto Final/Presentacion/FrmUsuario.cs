@@ -16,6 +16,10 @@ namespace Proyecto_Final.Presentacion
     {
         //"estado" me indica si estoy agregando o modificando un usuario para cuando pulse aceptar.
         string estado;
+
+        //"contraseñaOriginal" es la variable que me ayuda a verificar si la contraseña se ha modificado al
+        //modificar un usuario.
+        string contraseñaOriginal;
         private static DataTable dt = new DataTable();
         public FrmUsuario()
         {
@@ -87,6 +91,7 @@ namespace Proyecto_Final.Presentacion
             //El procedimiento se cancela.
             if (dgvUsuario.CurrentRow == null) return;
             //se configura la ventana para poder modificar un usuario
+            contraseñaOriginal = txtContraseña.Text;
             cambios("modificar");
         }
 
@@ -114,18 +119,21 @@ namespace Proyecto_Final.Presentacion
             usuario.telefono = txtTelefono.Text;
             usuario.correo = txtCorreo.Text;
             usuario.username = txtUsuario.Text;
-            usuario.password = Encriptar.GetSHA256(txtContraseña.Text);
+            //usuario.password = Encriptar.GetSHA256(txtContraseña.Text);
             usuario.rol = txtTipo.Text;
             try
             {
                 if (estado == "agregando")
                 {
+                    usuario.password = Encriptar.GetSHA256(txtContraseña.Text);
                     int usuarioID = FUsuario.Insertar(usuario);
                     if (usuarioID > 0) MessageBox.Show("Usuario registrado con exito!");
                     else MessageBox.Show("El usuario no se pudo registrar");
                 }
                 else if (estado == "modificando")
                 {
+                    if (contraseñaOriginal == txtContraseña.Text) usuario.password = txtContraseña.Text;
+                    else usuario.password = Encriptar.GetSHA256(txtContraseña.Text);
                     if (FUsuario.Actualizar(usuario) > 0) MessageBox.Show("Modificado con exito!");
                     else MessageBox.Show("El producto no se pudo modificar");
                 }
