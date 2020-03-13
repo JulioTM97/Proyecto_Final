@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\FAño.cs" />
     <Compile Include="Datos\FDBHelper.cs" />
     <Compile Include="Datos\FGrado.cs" />
     <Compile Include="Datos\FInstitucion.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Datos\FUsuario.cs" />
     <Compile Include="Encriptar.cs" />
     <Compile Include="Entidades\Asignatura.cs" />
+    <Compile Include="Entidades\Año.cs" />
     <Compile Include="Entidades\Grado.cs" />
     <Compile Include="Entidades\Institucion.cs" />
     <Compile Include="Entidades\Seccion.cs" />
@@ -65,6 +67,12 @@
     </Compile>
     <Compile Include="Presentacion\FrmAsignatura.designer.cs">
       <DependentUpon>FrmAsignatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmAño.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmAño.Designer.cs">
+      <DependentUpon>FrmAño.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmGrado.cs">
       <SubType>Form</SubType>
@@ -112,6 +120,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\FrmAsignatura.resx">
       <DependentUpon>FrmAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmAño.resx">
+      <DependentUpon>FrmAño.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmGrado.resx">
       <DependentUpon>FrmGrado.cs</DependentUpon>
