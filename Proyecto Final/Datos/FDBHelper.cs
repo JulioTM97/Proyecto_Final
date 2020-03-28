@@ -19,9 +19,9 @@ namespace Proyecto_Final.Datos
         public static DataSet ExecuteDataSet(string sqlSpName, SqlParameter[] dbParams)
         {
             DataSet ds = null;
-            //try
-            //{
-            ds = new DataSet();
+            try
+            {
+                ds = new DataSet();
             
             SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
@@ -38,11 +38,11 @@ namespace Proyecto_Final.Datos
                 }
             }
             da.Fill(ds);
-            //}
-            //catch (Exception)
-            //{
-            //    throw;
-            //}
+        }
+            catch (Exception)
+            {
+                throw;
+            }
             return ds;
         }
 

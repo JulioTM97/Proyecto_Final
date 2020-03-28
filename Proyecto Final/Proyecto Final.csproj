@@ -49,15 +49,19 @@
   <ItemGroup>
     <Compile Include="Datos\FAño.cs" />
     <Compile Include="Datos\FDBHelper.cs" />
+    <Compile Include="Datos\FEstudiante.cs" />
+    <Compile Include="Datos\FEstudiantesActivos.cs" />
     <Compile Include="Datos\FGrado.cs" />
     <Compile Include="Datos\FInstitucion.cs" />
     <Compile Include="Datos\FLogin.cs" />
     <Compile Include="Datos\FAsignatura.cs" />
+    <Compile Include="Datos\FPensum.cs" />
     <Compile Include="Datos\FSeccion.cs" />
     <Compile Include="Datos\FUsuario.cs" />
     <Compile Include="Encriptar.cs" />
     <Compile Include="Entidades\Asignatura.cs" />
     <Compile Include="Entidades\Año.cs" />
+    <Compile Include="Entidades\Estudiante.cs" />
     <Compile Include="Entidades\Grado.cs" />
     <Compile Include="Entidades\Institucion.cs" />
     <Compile Include="Entidades\Seccion.cs" />
@@ -73,6 +77,18 @@
     </Compile>
     <Compile Include="Presentacion\FrmAño.Designer.cs">
       <DependentUpon>FrmAño.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmEstudiante.Designer.cs">
+      <DependentUpon>FrmEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmEstudiantesActivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmEstudiantesActivos.Designer.cs">
+      <DependentUpon>FrmEstudiantesActivos.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmGrado.cs">
       <SubType>Form</SubType>
@@ -98,6 +114,12 @@
     <Compile Include="Presentacion\FrmLogin.designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\FrmPensum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmPensum.Designer.cs">
+      <DependentUpon>FrmPensum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +131,18 @@
     </Compile>
     <Compile Include="Presentacion\FrmSeccion.designer.cs">
       <DependentUpon>FrmSeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmSeleccionarAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmSeleccionarAsignatura.Designer.cs">
+      <DependentUpon>FrmSeleccionarAsignatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmSeleccionarSeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmSeleccionarSeccion.Designer.cs">
+      <DependentUpon>FrmSeleccionarSeccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmUsuario.cs">
       <SubType>Form</SubType>
@@ -124,6 +158,12 @@
     <EmbeddedResource Include="Presentacion\FrmAño.resx">
       <DependentUpon>FrmAño.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmEstudiante.resx">
+      <DependentUpon>FrmEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmEstudiantesActivos.resx">
+      <DependentUpon>FrmEstudiantesActivos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmGrado.resx">
       <DependentUpon>FrmGrado.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,11 +176,20 @@
     <EmbeddedResource Include="Presentacion\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmPensum.resx">
+      <DependentUpon>FrmPensum.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmSeccion.resx">
       <DependentUpon>FrmSeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmSeleccionarAsignatura.resx">
+      <DependentUpon>FrmSeleccionarAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmSeleccionarSeccion.resx">
+      <DependentUpon>FrmSeleccionarSeccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>

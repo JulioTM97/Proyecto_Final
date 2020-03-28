@@ -150,9 +150,16 @@ namespace Proyecto_Final.Presentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnce_Click(object sender, EventArgs e)
         {
+            FrmEstudiantesActivos frmEstudiantesActivos = new FrmEstudiantesActivos();
+            frmEstudiantesActivos.Show();
+        }
 
+        private void btncpen_Click(object sender, EventArgs e)
+        {
+            FrmPensum frmPensum = new FrmPensum();
+            frmPensum.Show();
         }
     }
 }
