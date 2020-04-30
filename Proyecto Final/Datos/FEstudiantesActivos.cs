@@ -59,12 +59,13 @@ namespace Proyecto_Final.Datos
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FEstudiantesActivos_Modificar", dbParams));
         }
 
-        public static int Eliminar(Estudiante estudiante, string periodo)
+        public static int Eliminar(Estudiante estudiante, string periodo, int _aux_id)
         {
             SqlParameter[] dbParams = new SqlParameter[]
                 {
                     FDBHelper.MakeParam("@PERIODO", SqlDbType.VarChar, 0, periodo),
-                    FDBHelper.MakeParam("@ESTUDIANTE_ID", SqlDbType.Int, 0, estudiante.id)
+                    FDBHelper.MakeParam("@ESTUDIANTE_ID", SqlDbType.Int, 0, estudiante.id),
+                    FDBHelper.MakeParam("@AUX_ID", SqlDbType.Int, 0, _aux_id)
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FEstudiantesActivos_Eliminar", dbParams));
         }

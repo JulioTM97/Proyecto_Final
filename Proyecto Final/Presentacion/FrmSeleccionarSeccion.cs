@@ -17,11 +17,18 @@ namespace Proyecto_Final.Presentacion
         DataTable dt = new DataTable();
         Seccion seccion = new Seccion();
         FrmEstudiantesActivos frmEstudiantesActivos;
+        FrmCalificacion1 frmCalificacion1;
         FrmPensum frmPensum;
         public FrmSeleccionarSeccion(FrmEstudiantesActivos _frmEstudiantesActivos)
         {
             InitializeComponent();
             frmEstudiantesActivos = _frmEstudiantesActivos;
+        }
+
+        public FrmSeleccionarSeccion(FrmCalificacion1 _frmCalificacion1)
+        {
+            InitializeComponent();
+            frmCalificacion1 = _frmCalificacion1;
         }
 
         public FrmSeleccionarSeccion(FrmPensum _frmPensum)
@@ -65,10 +72,15 @@ namespace Proyecto_Final.Presentacion
                 dgvSeccion_CellClick(null, null);
                 frmPensum.ObtenerSeccion(seccion);
             }
-            else
+            else if (frmEstudiantesActivos !=null)
             {
                 dgvSeccion_CellClick(null, null);
                 frmEstudiantesActivos.ObtenerSeccion(seccion);
+            }
+            else if (frmCalificacion1 != null)
+            {
+                dgvSeccion_CellClick(null, null);
+                frmCalificacion1.ObtenerSeccion(seccion);
             }
             this.Close();
         }

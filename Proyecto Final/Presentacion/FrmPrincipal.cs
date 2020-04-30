@@ -18,7 +18,7 @@ namespace Proyecto_Final.Presentacion
     public partial class FrmPrincipal : Form
     {
         FrmLogin frmLogin;
-        Usuario usuario;
+        public Usuario usuarioActivo;
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace Proyecto_Final.Presentacion
         {
             InitializeComponent();
             frmLogin = _frmLogin;
-            usuario = _usuario;
+            usuarioActivo = _usuario;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -97,12 +97,12 @@ namespace Proyecto_Final.Presentacion
         // Para mostrar los datos del Usuario           
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
         {
-             txtNombre.Text = usuario.nombre;
-             txtCedula.Text = usuario.cedula;
-             txtTelefono.Text = usuario.telefono;
-             txtCorreo.Text = usuario.correo;
-             txtTipo.Text = usuario.rol;
-             txtUsername.Text = usuario.username;
+             txtNombre.Text = usuarioActivo.nombre;
+             txtCedula.Text = usuarioActivo.cedula;
+             txtTelefono.Text = usuarioActivo.telefono;
+             txtCorreo.Text = usuarioActivo.correo;
+             txtTipo.Text = usuarioActivo.rol;
+             txtUsername.Text = usuarioActivo.username;
         }
 
         private void Mostrar_Formulario_Inicio_Click(object sender, EventArgs e)
@@ -160,6 +160,12 @@ namespace Proyecto_Final.Presentacion
         {
             FrmPensum frmPensum = new FrmPensum();
             frmPensum.Show();
+        }
+
+        private void btncalificar_Click(object sender, EventArgs e)
+        {
+            FrmCalificacion1 frmCalificacion1 = new FrmCalificacion1();
+            frmCalificacion1.Show();
         }
     }
 }

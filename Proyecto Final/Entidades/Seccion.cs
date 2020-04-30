@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Final.Entidades
 {
-    class Seccion
+    public class Seccion
     {
         public int id;
         public string grado, nombre;

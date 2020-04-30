@@ -44,8 +44,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtCedula = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
@@ -62,6 +60,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -244,24 +244,6 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Tipo de Usuario";
             // 
-            // txtCedula
-            // 
-            this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(129, 92);
-            this.txtCedula.MaxLength = 13;
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(160, 21);
-            this.txtCedula.TabIndex = 4;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(129, 118);
-            this.txtTelefono.MaxLength = 13;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(160, 21);
-            this.txtTelefono.TabIndex = 6;
-            // 
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -378,6 +360,8 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.txtCedula);
+            this.groupBox2.Controls.Add(this.txtTelefono);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.txtID);
             this.groupBox2.Controls.Add(this.label10);
@@ -394,9 +378,7 @@
             this.groupBox2.Controls.Add(this.btnModificarUsuario);
             this.groupBox2.Controls.Add(this.btnAgregarUsuario);
             this.groupBox2.Controls.Add(this.txtTipo);
-            this.groupBox2.Controls.Add(this.txtCedula);
             this.groupBox2.Controls.Add(this.txtContraseña);
-            this.groupBox2.Controls.Add(this.txtTelefono);
             this.groupBox2.Controls.Add(this.txtUsuario);
             this.groupBox2.Controls.Add(this.txtCorreo);
             this.groupBox2.Controls.Add(this.label5);
@@ -427,7 +409,7 @@
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(129, 40);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(75, 21);
+            this.txtID.Size = new System.Drawing.Size(91, 21);
             this.txtID.TabIndex = 23;
             // 
             // label10
@@ -482,6 +464,23 @@
             this.label11.TabIndex = 27;
             this.label11.Text = "Consultar Personal del Centro Educativo";
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(129, 119);
+            this.txtTelefono.Mask = "(999)000-0000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(91, 21);
+            this.txtTelefono.TabIndex = 6;
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(129, 93);
+            this.txtCedula.Mask = "000-0000000-0";
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(91, 20);
+            this.txtCedula.TabIndex = 28;
+            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,8 +522,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContraseña;
@@ -543,5 +540,7 @@
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
+        private System.Windows.Forms.MaskedTextBox txtCedula;
     }
 }

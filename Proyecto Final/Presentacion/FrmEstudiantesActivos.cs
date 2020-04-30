@@ -18,6 +18,7 @@ namespace Proyecto_Final.Presentacion
         Seccion seccion = new Seccion();
         Estudiante estudiante = new Estudiante();
         string estado;
+        int aux_id;
         public FrmEstudiantesActivos()
         {
             InitializeComponent();
@@ -43,6 +44,7 @@ namespace Proyecto_Final.Presentacion
                     dt = ds.Tables[0];
                     dgvEstudiante.DataSource = dt;
                     dgvEstudiante.Columns["SECCION_ID"].Visible = false;
+                    dgvEstudiante.Columns["ESTUDIANTE_AUX_ID"].Visible = false;
 
                 }
                 catch (Exception exception)
@@ -155,6 +157,8 @@ namespace Proyecto_Final.Presentacion
                 txtGrado.Text = dgvEstudiante.CurrentRow.Cells["GRADO"].Value.ToString();
                 txtSeccion.Text = dgvEstudiante.CurrentRow.Cells["SECCION"].Value.ToString();
                 txtMatricula.Text = dgvEstudiante.CurrentRow.Cells["MATRICULA"].Value.ToString();
+                seccion.id = Convert.ToInt32(dgvEstudiante.CurrentRow.Cells["SECCION_ID"].Value);
+                aux_id= Convert.ToInt32(dgvEstudiante.CurrentRow.Cells["ESTUDIANTE_AUX_ID"].Value);
             }
         }
 
@@ -167,7 +171,6 @@ namespace Proyecto_Final.Presentacion
             }
 
             estudiante.matricula = Convert.ToInt32(txtMatricula.Text);
-            seccion.id = Convert.ToInt32(dgvEstudiante.CurrentRow.Cells["SECCION_ID"].Value);
 
             for (int i = 0; i < dgvEstudiante.RowCount; i++)
             {
@@ -199,6 +202,7 @@ namespace Proyecto_Final.Presentacion
                 {
                     estudiante.id = Convert.ToInt32(txtID.Text);
                     estudiante.nombre = txtNombre.Text;
+                    //MessageBox.Show(seccion.id.ToString());
                     int registrosModificados = FEstudiantesActivos.Modificar(estudiante, seccion, txtPeriodo.Text);
                     if (registrosModificados > 0) MessageBox.Show("Estudiante modificado con exito!");
                     else MessageBox.Show("El estudiante no se pudo modificar");
@@ -279,11 +283,11 @@ namespace Proyecto_Final.Presentacion
                 if (dgvEstudiante.CurrentRow == null) return;
                 estudiante.id = Convert.ToInt32(txtID.Text);
                 
-                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar al estudiante?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar al estudiante?"+Environment.NewLine+"Esto eliminará todas las calificaciones de este estudiante.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (dialogResult == DialogResult.No) return;
                 try
                 {
-                    if (FEstudiantesActivos.Eliminar(estudiante,txtPeriodo.Text) > 0) MessageBox.Show("Eliminado con exito!");
+                    if (FEstudiantesActivos.Eliminar(estudiante,txtPeriodo.Text, aux_id) > 0) MessageBox.Show("Eliminado con exito!");
                     else MessageBox.Show("El estudiante no se pudo eliminar.");
                 }
                 catch (Exception exception)
