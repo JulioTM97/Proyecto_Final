@@ -45,7 +45,8 @@ namespace Proyecto_Final.Presentacion
                     DataSet ds = FSeccion.GetAll();
                     dt = ds.Tables[0];
                     dgvSeccion.DataSource = dt;
-
+                    dgvSeccion.Columns["ID"].Visible = false;
+                    dgvSeccion.Columns["DOCENTE_ENCARGADO"].Visible = false;
                 }
                 catch (Exception exception)
                 {

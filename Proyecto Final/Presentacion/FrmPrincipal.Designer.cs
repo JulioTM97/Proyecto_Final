@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.btnPeriodos = new System.Windows.Forms.Button();
+            this.btnCalificaciones = new System.Windows.Forms.Button();
             this.btncpen = new System.Windows.Forms.Button();
             this.btnce = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,7 +65,6 @@
             this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -78,7 +79,8 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.MenuVertical.Controls.Add(this.button1);
+            this.MenuVertical.Controls.Add(this.btnPeriodos);
+            this.MenuVertical.Controls.Add(this.btnCalificaciones);
             this.MenuVertical.Controls.Add(this.btncpen);
             this.MenuVertical.Controls.Add(this.btnce);
             this.MenuVertical.Controls.Add(this.label4);
@@ -97,8 +99,47 @@
             this.MenuVertical.TabIndex = 0;
             this.MenuVertical.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuVertical_MouseDown);
             // 
+            // btnPeriodos
+            // 
+            this.btnPeriodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnPeriodos.FlatAppearance.BorderSize = 0;
+            this.btnPeriodos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnPeriodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPeriodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPeriodos.ForeColor = System.Drawing.Color.White;
+            this.btnPeriodos.Image = ((System.Drawing.Image)(resources.GetObject("btnPeriodos.Image")));
+            this.btnPeriodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPeriodos.Location = new System.Drawing.Point(0, 382);
+            this.btnPeriodos.Name = "btnPeriodos";
+            this.btnPeriodos.Size = new System.Drawing.Size(250, 40);
+            this.btnPeriodos.TabIndex = 6;
+            this.btnPeriodos.Text = "            Años Escolares";
+            this.btnPeriodos.UseVisualStyleBackColor = false;
+            this.btnPeriodos.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
+            this.btnPeriodos.Click += new System.EventHandler(this.btnPeriodos_Click);
+            // 
+            // btnCalificaciones
+            // 
+            this.btnCalificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnCalificaciones.FlatAppearance.BorderSize = 0;
+            this.btnCalificaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCalificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalificaciones.ForeColor = System.Drawing.Color.White;
+            this.btnCalificaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnCalificaciones.Image")));
+            this.btnCalificaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalificaciones.Location = new System.Drawing.Point(0, 342);
+            this.btnCalificaciones.Name = "btnCalificaciones";
+            this.btnCalificaciones.Size = new System.Drawing.Size(250, 40);
+            this.btnCalificaciones.TabIndex = 6;
+            this.btnCalificaciones.Text = "            Calificaciones";
+            this.btnCalificaciones.UseVisualStyleBackColor = false;
+            this.btnCalificaciones.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
+            this.btnCalificaciones.Click += new System.EventHandler(this.btncalificar_Click);
+            // 
             // btncpen
             // 
+            this.btncpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btncpen.FlatAppearance.BorderSize = 0;
             this.btncpen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btncpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -106,16 +147,18 @@
             this.btncpen.ForeColor = System.Drawing.Color.White;
             this.btncpen.Image = ((System.Drawing.Image)(resources.GetObject("btncpen.Image")));
             this.btncpen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncpen.Location = new System.Drawing.Point(0, 338);
+            this.btncpen.Location = new System.Drawing.Point(0, 302);
             this.btncpen.Name = "btncpen";
             this.btncpen.Size = new System.Drawing.Size(250, 40);
             this.btncpen.TabIndex = 6;
             this.btncpen.Text = "            Consultar Pensum";
-            this.btncpen.UseVisualStyleBackColor = true;
+            this.btncpen.UseVisualStyleBackColor = false;
+            this.btncpen.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btncpen.Click += new System.EventHandler(this.btncpen_Click);
             // 
             // btnce
             // 
+            this.btnce.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnce.FlatAppearance.BorderSize = 0;
             this.btnce.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnce.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -123,12 +166,13 @@
             this.btnce.ForeColor = System.Drawing.Color.White;
             this.btnce.Image = ((System.Drawing.Image)(resources.GetObject("btnce.Image")));
             this.btnce.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnce.Location = new System.Drawing.Point(0, 292);
+            this.btnce.Location = new System.Drawing.Point(0, 262);
             this.btnce.Name = "btnce";
             this.btnce.Size = new System.Drawing.Size(250, 40);
             this.btnce.TabIndex = 6;
             this.btnce.Text = "            Consultar Estudiantes";
-            this.btnce.UseVisualStyleBackColor = true;
+            this.btnce.UseVisualStyleBackColor = false;
+            this.btnce.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnce.Click += new System.EventHandler(this.btnce_Click);
             // 
             // label4
@@ -317,6 +361,7 @@
             // 
             // btnca
             // 
+            this.btnca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnca.FlatAppearance.BorderSize = 0;
             this.btnca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -324,16 +369,18 @@
             this.btnca.ForeColor = System.Drawing.Color.White;
             this.btnca.Image = ((System.Drawing.Image)(resources.GetObject("btnca.Image")));
             this.btnca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnca.Location = new System.Drawing.Point(0, 246);
+            this.btnca.Location = new System.Drawing.Point(0, 222);
             this.btnca.Name = "btnca";
             this.btnca.Size = new System.Drawing.Size(250, 40);
             this.btnca.TabIndex = 5;
             this.btnca.Text = "            Consultar Asignaturas";
-            this.btnca.UseVisualStyleBackColor = true;
+            this.btnca.UseVisualStyleBackColor = false;
+            this.btnca.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnca.Click += new System.EventHandler(this.btnca_Click);
             // 
             // btncd
             // 
+            this.btncd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btncd.FlatAppearance.BorderSize = 0;
             this.btncd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btncd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -341,16 +388,18 @@
             this.btncd.ForeColor = System.Drawing.Color.White;
             this.btncd.Image = ((System.Drawing.Image)(resources.GetObject("btncd.Image")));
             this.btncd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncd.Location = new System.Drawing.Point(0, 200);
+            this.btncd.Location = new System.Drawing.Point(0, 182);
             this.btncd.Name = "btncd";
             this.btncd.Size = new System.Drawing.Size(250, 40);
             this.btncd.TabIndex = 4;
             this.btncd.Text = "         Consultar Datos ";
-            this.btncd.UseVisualStyleBackColor = true;
+            this.btncd.UseVisualStyleBackColor = false;
+            this.btncd.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btncd.Click += new System.EventHandler(this.btncd_Click);
             // 
             // btncs
             // 
+            this.btncs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btncs.FlatAppearance.BorderSize = 0;
             this.btncs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btncs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -358,16 +407,18 @@
             this.btncs.ForeColor = System.Drawing.Color.White;
             this.btncs.Image = ((System.Drawing.Image)(resources.GetObject("btncs.Image")));
             this.btncs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncs.Location = new System.Drawing.Point(0, 154);
+            this.btncs.Location = new System.Drawing.Point(0, 142);
             this.btncs.Name = "btncs";
             this.btncs.Size = new System.Drawing.Size(250, 40);
             this.btncs.TabIndex = 3;
             this.btncs.Text = "         Consultar Secciones";
-            this.btncs.UseVisualStyleBackColor = true;
+            this.btncs.UseVisualStyleBackColor = false;
+            this.btncs.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btncs.Click += new System.EventHandler(this.btncs_Click);
             // 
             // btncg
             // 
+            this.btncg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btncg.FlatAppearance.BorderSize = 0;
             this.btncg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btncg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -375,16 +426,18 @@
             this.btncg.ForeColor = System.Drawing.Color.White;
             this.btncg.Image = ((System.Drawing.Image)(resources.GetObject("btncg.Image")));
             this.btncg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncg.Location = new System.Drawing.Point(0, 108);
+            this.btncg.Location = new System.Drawing.Point(0, 102);
             this.btncg.Name = "btncg";
             this.btncg.Size = new System.Drawing.Size(250, 40);
             this.btncg.TabIndex = 2;
             this.btncg.Text = "        Consultar Grado";
-            this.btncg.UseVisualStyleBackColor = true;
+            this.btncg.UseVisualStyleBackColor = false;
+            this.btncg.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btncg.Click += new System.EventHandler(this.btncg_Click);
             // 
             // btncp
             // 
+            this.btncp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btncp.FlatAppearance.BorderSize = 0;
             this.btncp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btncp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -392,12 +445,13 @@
             this.btncp.ForeColor = System.Drawing.Color.White;
             this.btncp.Image = ((System.Drawing.Image)(resources.GetObject("btncp.Image")));
             this.btncp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncp.Location = new System.Drawing.Point(1, 62);
+            this.btncp.Location = new System.Drawing.Point(0, 62);
             this.btncp.Name = "btncp";
-            this.btncp.Size = new System.Drawing.Size(249, 40);
+            this.btncp.Size = new System.Drawing.Size(250, 40);
             this.btncp.TabIndex = 1;
             this.btncp.Text = "        Consultar Personal";
-            this.btncp.UseVisualStyleBackColor = true;
+            this.btncp.UseVisualStyleBackColor = false;
+            this.btncp.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btncp.Click += new System.EventHandler(this.btncp_Click);
             // 
             // BarraTitulo
@@ -503,23 +557,6 @@
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 40);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "            Calificaciones";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btncalificar_Click);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,6 +568,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.MenuVertical.ResumeLayout(false);
@@ -585,7 +623,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btncpen;
         private System.Windows.Forms.Button btnce;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCalificaciones;
+        private System.Windows.Forms.Button btnPeriodos;
     }
 }
 

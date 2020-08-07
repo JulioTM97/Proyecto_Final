@@ -17,13 +17,16 @@ namespace Proyecto_Final.Presentacion
         DataTable asignaturas, docentes;
         bool asignaturaNueva;
         string estado;
-        public FrmAsignatura()
+        FrmPrincipal frmPrincipal;
+        public FrmAsignatura(FrmPrincipal _frmPrincipal)
         {
             InitializeComponent();
+            frmPrincipal = _frmPrincipal;
         }
 
         private void FrmAsignatura_Load(object sender, EventArgs e)
         {
+
             try
             {
                 asignaturas = FAsignatura.CargarNombresAsignaturas().Tables[0];
@@ -32,8 +35,19 @@ namespace Proyecto_Final.Presentacion
 
                 DataSet dataSet = FAsignatura.GetAll();
                 dgvAsignatura.DataSource = dataSet.Tables[0];
+                dgvAsignatura.Columns["ID"].Visible = false;
+
                 Cambios("reinicio");
                 dgvAsignatura_CellClick(null, null);
+
+                if (frmPrincipal.usuarioActivo.rol != "REGISTRO")
+                {
+                    btnAceptar.Enabled = false;
+                    btnCancelar.Enabled = false;
+                    btnEliminarAsignatura.Enabled = false;
+                    btnModificarAsignatura.Enabled = false;
+                    btnAgregarAsignatura.Enabled = false;
+                }
             }
             catch (Exception exception)
             {
@@ -228,6 +242,13 @@ namespace Proyecto_Final.Presentacion
                     estado = "";
                     break;
             }
+        }
+        private void btnEnabledChangeEvent(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == null) return;
+            if (button.Enabled) button.BackColor = Color.FromArgb(0, 122, 204);
+            else button.BackColor = Color.Gray;
         }
     }
 }

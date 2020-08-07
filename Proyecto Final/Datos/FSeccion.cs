@@ -34,6 +34,7 @@ namespace Proyecto_Final.Datos
             SqlParameter[] dbParams = new SqlParameter[]
                 {
                     FDBHelper.MakeParam("@GRADO", SqlDbType.VarChar, 0, seccion.grado),
+                    FDBHelper.MakeParam("@DOCENTE", SqlDbType.VarChar, 0, seccion.docente),
                     FDBHelper.MakeParam("@NOMBRE", SqlDbType.VarChar, 0, seccion.nombre)
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FSeccion_Insertar", dbParams));
@@ -45,6 +46,7 @@ namespace Proyecto_Final.Datos
                 {
                     FDBHelper.MakeParam("@ID", SqlDbType.Int, 0, seccion.id),
                     FDBHelper.MakeParam("@GRADO", SqlDbType.VarChar, 0, seccion.grado),
+                    FDBHelper.MakeParam("@DOCENTE", SqlDbType.VarChar, 0, seccion.docente),
                     FDBHelper.MakeParam("@NOMBRE", SqlDbType.VarChar, 0, seccion.nombre),
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FSeccion_Actualizar", dbParams));

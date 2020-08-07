@@ -71,6 +71,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetCalificaciones.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetMateriasPendientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMateriasPendientes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datos\FAño.cs" />
     <Compile Include="Datos\FCalificacion.cs" />
     <Compile Include="Datos\FDBHelper.cs" />
@@ -80,6 +85,7 @@
     <Compile Include="Datos\FInstitucion.cs" />
     <Compile Include="Datos\FLogin.cs" />
     <Compile Include="Datos\FAsignatura.cs" />
+    <Compile Include="Datos\FMateriaPendiente.cs" />
     <Compile Include="Datos\FPensum.cs" />
     <Compile Include="Datos\FSeccion.cs" />
     <Compile Include="Datos\FUsuario.cs" />
@@ -158,6 +164,12 @@
     <Compile Include="Presentacion\FrmLogin.designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\FrmMateriaPendiente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmMateriaPendiente.Designer.cs">
+      <DependentUpon>FrmMateriaPendiente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FrmPensum.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +187,12 @@
     </Compile>
     <Compile Include="Presentacion\FrmReporteCalificaciones.Designer.cs">
       <DependentUpon>FrmReporteCalificaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteMateriasPendiente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmReporteMateriasPendiente.Designer.cs">
+      <DependentUpon>FrmReporteMateriasPendiente.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmSeccion.cs">
       <SubType>Form</SubType>
@@ -236,6 +254,9 @@
     <EmbeddedResource Include="Presentacion\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmMateriaPendiente.resx">
+      <DependentUpon>FrmMateriaPendiente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmPensum.resx">
       <DependentUpon>FrmPensum.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmReporteCalificaciones.resx">
       <DependentUpon>FrmReporteCalificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmReporteMateriasPendiente.resx">
+      <DependentUpon>FrmReporteMateriasPendiente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmSeccion.resx">
       <DependentUpon>FrmSeccion.cs</DependentUpon>
@@ -258,6 +282,7 @@
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ReporteCalificaciones.rdlc" />
+    <EmbeddedResource Include="Presentacion\ReporteMateriasPendientes.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -277,6 +302,17 @@
     </None>
     <None Include="DataSetCalificaciones.xss">
       <DependentUpon>DataSetCalificaciones.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMateriasPendientes.xsc">
+      <DependentUpon>DataSetMateriasPendientes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMateriasPendientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMateriasPendientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetMateriasPendientes.xss">
+      <DependentUpon>DataSetMateriasPendientes.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

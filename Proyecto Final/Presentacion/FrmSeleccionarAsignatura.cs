@@ -33,6 +33,8 @@ namespace Proyecto_Final.Presentacion
             {
                 DataSet dataSet = FAsignatura.GetAll();
                 dgvAsignatura.DataSource = dataSet.Tables[0];
+                dgvAsignatura.Columns["ID"].Visible = false;
+
                 dgvAsignatura_CellClick(null, null);
             }
             catch (Exception exception)

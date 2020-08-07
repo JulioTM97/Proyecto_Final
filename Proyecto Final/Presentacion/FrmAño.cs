@@ -14,11 +14,12 @@ namespace Proyecto_Final.Presentacion
 {
     public partial class FrmAño : Form
     {
-
+        FrmPrincipal frmPrincipal;
         private static DataTable dt = new DataTable();
-        public FrmAño()
+        public FrmAño(FrmPrincipal _frmPrincipal)
         {
             InitializeComponent();
+            frmPrincipal = _frmPrincipal;
         }
 
         private void FrmAño_Load(object sender, EventArgs e)
@@ -62,6 +63,14 @@ namespace Proyecto_Final.Presentacion
             }
             FrmAño_Load(null, null);
             
+        }
+
+        private void btnEnabledChangeEvent(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == null) return;
+            if (button.Enabled) button.BackColor = Color.FromArgb(0, 122, 204);
+            else button.BackColor = Color.Gray;
         }
     }
 }

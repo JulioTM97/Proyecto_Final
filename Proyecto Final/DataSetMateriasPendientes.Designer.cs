@@ -20,17 +20,17 @@ namespace Proyecto_Final {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSetCalificaciones")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetMateriasPendientes")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSetCalificaciones : global::System.Data.DataSet {
+    public partial class DataSetMateriasPendientes : global::System.Data.DataSet {
         
-        private usp_Presentacion_ImprimirCalificacionesDataTable tableusp_Presentacion_ImprimirCalificaciones;
+        private MateriasPendientesDataTable tableMateriasPendientes;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DataSetCalificaciones() {
+        public DataSetMateriasPendientes() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Proyecto_Final {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DataSetCalificaciones(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetMateriasPendientes(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Proyecto_Final {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["usp_Presentacion_ImprimirCalificaciones"] != null)) {
-                    base.Tables.Add(new usp_Presentacion_ImprimirCalificacionesDataTable(ds.Tables["usp_Presentacion_ImprimirCalificaciones"]));
+                if ((ds.Tables["MateriasPendientes"] != null)) {
+                    base.Tables.Add(new MateriasPendientesDataTable(ds.Tables["MateriasPendientes"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Proyecto_Final {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public usp_Presentacion_ImprimirCalificacionesDataTable usp_Presentacion_ImprimirCalificaciones {
+        public MateriasPendientesDataTable MateriasPendientes {
             get {
-                return this.tableusp_Presentacion_ImprimirCalificaciones;
+                return this.tableMateriasPendientes;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Proyecto_Final {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSetCalificaciones cln = ((DataSetCalificaciones)(base.Clone()));
+            DataSetMateriasPendientes cln = ((DataSetMateriasPendientes)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Proyecto_Final {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["usp_Presentacion_ImprimirCalificaciones"] != null)) {
-                    base.Tables.Add(new usp_Presentacion_ImprimirCalificacionesDataTable(ds.Tables["usp_Presentacion_ImprimirCalificaciones"]));
+                if ((ds.Tables["MateriasPendientes"] != null)) {
+                    base.Tables.Add(new MateriasPendientesDataTable(ds.Tables["MateriasPendientes"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Proyecto_Final {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableusp_Presentacion_ImprimirCalificaciones = ((usp_Presentacion_ImprimirCalificacionesDataTable)(base.Tables["usp_Presentacion_ImprimirCalificaciones"]));
+            this.tableMateriasPendientes = ((MateriasPendientesDataTable)(base.Tables["MateriasPendientes"]));
             if ((initTable == true)) {
-                if ((this.tableusp_Presentacion_ImprimirCalificaciones != null)) {
-                    this.tableusp_Presentacion_ImprimirCalificaciones.InitVars();
+                if ((this.tableMateriasPendientes != null)) {
+                    this.tableMateriasPendientes.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Proyecto_Final {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSetCalificaciones";
+            this.DataSetName = "DataSetMateriasPendientes";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSetCalificaciones.xsd";
+            this.Namespace = "http://tempuri.org/DataSetMateriasPendientes.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableusp_Presentacion_ImprimirCalificaciones = new usp_Presentacion_ImprimirCalificacionesDataTable();
-            base.Tables.Add(this.tableusp_Presentacion_ImprimirCalificaciones);
+            this.tableMateriasPendientes = new MateriasPendientesDataTable();
+            base.Tables.Add(this.tableMateriasPendientes);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeusp_Presentacion_ImprimirCalificaciones() {
+        private bool ShouldSerializeMateriasPendientes() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Proyecto_Final {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSetCalificaciones ds = new DataSetCalificaciones();
+            DataSetMateriasPendientes ds = new DataSetMateriasPendientes();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,53 +270,33 @@ namespace Proyecto_Final {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void usp_Presentacion_ImprimirCalificacionesRowChangeEventHandler(object sender, usp_Presentacion_ImprimirCalificacionesRowChangeEvent e);
+        public delegate void MateriasPendientesRowChangeEventHandler(object sender, MateriasPendientesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class usp_Presentacion_ImprimirCalificacionesDataTable : global::System.Data.TypedTableBase<usp_Presentacion_ImprimirCalificacionesRow> {
+        public partial class MateriasPendientesDataTable : global::System.Data.TypedTableBase<MateriasPendientesRow> {
+            
+            private global::System.Data.DataColumn columnID_ESTUDIANTE;
+            
+            private global::System.Data.DataColumn columnESTUDIANTE;
+            
+            private global::System.Data.DataColumn columnGRADO;
+            
+            private global::System.Data.DataColumn columnSECCION;
             
             private global::System.Data.DataColumn columnASIGNATURA;
             
             private global::System.Data.DataColumn columnDOCENTE;
             
-            private global::System.Data.DataColumn columnPRIMER_REPORTE;
-            
-            private global::System.Data.DataColumn columnSEGUNDO_REPORTE;
-            
-            private global::System.Data.DataColumn columnTERCER_REPORTE;
-            
-            private global::System.Data.DataColumn columnCUARTO_REPORTE;
-            
-            private global::System.Data.DataColumn columnFINAL;
-            
-            private global::System.Data.DataColumn columnCOMPLETIVO;
-            
-            private global::System.Data.DataColumn columnEXTRAORDINARIO;
-            
-            private global::System.Data.DataColumn columnESTUDIANTE;
-            
-            private global::System.Data.DataColumn columnSECCION;
-            
-            private global::System.Data.DataColumn columnGRADO;
-            
-            private global::System.Data.DataColumn columnMATRICULA;
-            
-            private global::System.Data.DataColumn columnMAESTRO_ENCARGADO;
-            
-            private global::System.Data.DataColumn columnCOORDINADOR_PEDAGOGICO;
-            
             private global::System.Data.DataColumn columnPERIODO;
-            
-            private global::System.Data.DataColumn columnNOMBRE_CENTRO;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public usp_Presentacion_ImprimirCalificacionesDataTable() {
-                this.TableName = "usp_Presentacion_ImprimirCalificaciones";
+            public MateriasPendientesDataTable() {
+                this.TableName = "MateriasPendientes";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -324,7 +304,7 @@ namespace Proyecto_Final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal usp_Presentacion_ImprimirCalificacionesDataTable(global::System.Data.DataTable table) {
+            internal MateriasPendientesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -341,9 +321,41 @@ namespace Proyecto_Final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected usp_Presentacion_ImprimirCalificacionesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected MateriasPendientesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ID_ESTUDIANTEColumn {
+                get {
+                    return this.columnID_ESTUDIANTE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ESTUDIANTEColumn {
+                get {
+                    return this.columnESTUDIANTE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn GRADOColumn {
+                get {
+                    return this.columnGRADO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SECCIONColumn {
+                get {
+                    return this.columnSECCION;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -364,121 +376,9 @@ namespace Proyecto_Final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PRIMER_REPORTEColumn {
-                get {
-                    return this.columnPRIMER_REPORTE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SEGUNDO_REPORTEColumn {
-                get {
-                    return this.columnSEGUNDO_REPORTE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TERCER_REPORTEColumn {
-                get {
-                    return this.columnTERCER_REPORTE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CUARTO_REPORTEColumn {
-                get {
-                    return this.columnCUARTO_REPORTE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn FINALColumn {
-                get {
-                    return this.columnFINAL;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn COMPLETIVOColumn {
-                get {
-                    return this.columnCOMPLETIVO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn EXTRAORDINARIOColumn {
-                get {
-                    return this.columnEXTRAORDINARIO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ESTUDIANTEColumn {
-                get {
-                    return this.columnESTUDIANTE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SECCIONColumn {
-                get {
-                    return this.columnSECCION;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn GRADOColumn {
-                get {
-                    return this.columnGRADO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn MATRICULAColumn {
-                get {
-                    return this.columnMATRICULA;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn MAESTRO_ENCARGADOColumn {
-                get {
-                    return this.columnMAESTRO_ENCARGADO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn COORDINADOR_PEDAGOGICOColumn {
-                get {
-                    return this.columnCOORDINADOR_PEDAGOGICO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn PERIODOColumn {
                 get {
                     return this.columnPERIODO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NOMBRE_CENTROColumn {
-                get {
-                    return this.columnNOMBRE_CENTRO;
                 }
             }
             
@@ -493,78 +393,58 @@ namespace Proyecto_Final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public usp_Presentacion_ImprimirCalificacionesRow this[int index] {
+            public MateriasPendientesRow this[int index] {
                 get {
-                    return ((usp_Presentacion_ImprimirCalificacionesRow)(this.Rows[index]));
+                    return ((MateriasPendientesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event usp_Presentacion_ImprimirCalificacionesRowChangeEventHandler usp_Presentacion_ImprimirCalificacionesRowChanging;
+            public event MateriasPendientesRowChangeEventHandler MateriasPendientesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event usp_Presentacion_ImprimirCalificacionesRowChangeEventHandler usp_Presentacion_ImprimirCalificacionesRowChanged;
+            public event MateriasPendientesRowChangeEventHandler MateriasPendientesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event usp_Presentacion_ImprimirCalificacionesRowChangeEventHandler usp_Presentacion_ImprimirCalificacionesRowDeleting;
+            public event MateriasPendientesRowChangeEventHandler MateriasPendientesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event usp_Presentacion_ImprimirCalificacionesRowChangeEventHandler usp_Presentacion_ImprimirCalificacionesRowDeleted;
+            public event MateriasPendientesRowChangeEventHandler MateriasPendientesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Addusp_Presentacion_ImprimirCalificacionesRow(usp_Presentacion_ImprimirCalificacionesRow row) {
+            public void AddMateriasPendientesRow(MateriasPendientesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public usp_Presentacion_ImprimirCalificacionesRow Addusp_Presentacion_ImprimirCalificacionesRow(
-                        string ASIGNATURA, 
-                        int DOCENTE, 
-                        int PRIMER_REPORTE, 
-                        int SEGUNDO_REPORTE, 
-                        int TERCER_REPORTE, 
-                        int CUARTO_REPORTE, 
-                        int FINAL, 
-                        int COMPLETIVO, 
-                        int EXTRAORDINARIO, 
-                        string ESTUDIANTE, 
-                        string SECCION, 
-                        string GRADO, 
-                        int MATRICULA, 
-                        string MAESTRO_ENCARGADO, 
-                        string COORDINADOR_PEDAGOGICO, 
-                        string PERIODO, 
-                        string NOMBRE_CENTRO) {
-                usp_Presentacion_ImprimirCalificacionesRow rowusp_Presentacion_ImprimirCalificacionesRow = ((usp_Presentacion_ImprimirCalificacionesRow)(this.NewRow()));
+            public MateriasPendientesRow AddMateriasPendientesRow(string ESTUDIANTE, string GRADO, string SECCION, string ASIGNATURA, string DOCENTE, string PERIODO) {
+                MateriasPendientesRow rowMateriasPendientesRow = ((MateriasPendientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        null,
+                        ESTUDIANTE,
+                        GRADO,
+                        SECCION,
                         ASIGNATURA,
                         DOCENTE,
-                        PRIMER_REPORTE,
-                        SEGUNDO_REPORTE,
-                        TERCER_REPORTE,
-                        CUARTO_REPORTE,
-                        FINAL,
-                        COMPLETIVO,
-                        EXTRAORDINARIO,
-                        ESTUDIANTE,
-                        SECCION,
-                        GRADO,
-                        MATRICULA,
-                        MAESTRO_ENCARGADO,
-                        COORDINADOR_PEDAGOGICO,
-                        PERIODO,
-                        NOMBRE_CENTRO};
-                rowusp_Presentacion_ImprimirCalificacionesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowusp_Presentacion_ImprimirCalificacionesRow);
-                return rowusp_Presentacion_ImprimirCalificacionesRow;
+                        PERIODO};
+                rowMateriasPendientesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMateriasPendientesRow);
+                return rowMateriasPendientesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MateriasPendientesRow FindByID_ESTUDIANTE(int ID_ESTUDIANTE) {
+                return ((MateriasPendientesRow)(this.Rows.Find(new object[] {
+                            ID_ESTUDIANTE})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                usp_Presentacion_ImprimirCalificacionesDataTable cln = ((usp_Presentacion_ImprimirCalificacionesDataTable)(base.Clone()));
+                MateriasPendientesDataTable cln = ((MateriasPendientesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -572,103 +452,76 @@ namespace Proyecto_Final {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new usp_Presentacion_ImprimirCalificacionesDataTable();
+                return new MateriasPendientesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
+                this.columnID_ESTUDIANTE = base.Columns["ID_ESTUDIANTE"];
+                this.columnESTUDIANTE = base.Columns["ESTUDIANTE"];
+                this.columnGRADO = base.Columns["GRADO"];
+                this.columnSECCION = base.Columns["SECCION"];
                 this.columnASIGNATURA = base.Columns["ASIGNATURA"];
                 this.columnDOCENTE = base.Columns["DOCENTE"];
-                this.columnPRIMER_REPORTE = base.Columns["PRIMER_REPORTE"];
-                this.columnSEGUNDO_REPORTE = base.Columns["SEGUNDO_REPORTE"];
-                this.columnTERCER_REPORTE = base.Columns["TERCER_REPORTE"];
-                this.columnCUARTO_REPORTE = base.Columns["CUARTO_REPORTE"];
-                this.columnFINAL = base.Columns["FINAL"];
-                this.columnCOMPLETIVO = base.Columns["COMPLETIVO"];
-                this.columnEXTRAORDINARIO = base.Columns["EXTRAORDINARIO"];
-                this.columnESTUDIANTE = base.Columns["ESTUDIANTE"];
-                this.columnSECCION = base.Columns["SECCION"];
-                this.columnGRADO = base.Columns["GRADO"];
-                this.columnMATRICULA = base.Columns["MATRICULA"];
-                this.columnMAESTRO_ENCARGADO = base.Columns["MAESTRO_ENCARGADO"];
-                this.columnCOORDINADOR_PEDAGOGICO = base.Columns["COORDINADOR_PEDAGOGICO"];
                 this.columnPERIODO = base.Columns["PERIODO"];
-                this.columnNOMBRE_CENTRO = base.Columns["NOMBRE_CENTRO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnASIGNATURA = new global::System.Data.DataColumn("ASIGNATURA", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnASIGNATURA);
-                this.columnDOCENTE = new global::System.Data.DataColumn("DOCENTE", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDOCENTE);
-                this.columnPRIMER_REPORTE = new global::System.Data.DataColumn("PRIMER_REPORTE", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPRIMER_REPORTE);
-                this.columnSEGUNDO_REPORTE = new global::System.Data.DataColumn("SEGUNDO_REPORTE", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSEGUNDO_REPORTE);
-                this.columnTERCER_REPORTE = new global::System.Data.DataColumn("TERCER_REPORTE", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTERCER_REPORTE);
-                this.columnCUARTO_REPORTE = new global::System.Data.DataColumn("CUARTO_REPORTE", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCUARTO_REPORTE);
-                this.columnFINAL = new global::System.Data.DataColumn("FINAL", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFINAL);
-                this.columnCOMPLETIVO = new global::System.Data.DataColumn("COMPLETIVO", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCOMPLETIVO);
-                this.columnEXTRAORDINARIO = new global::System.Data.DataColumn("EXTRAORDINARIO", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEXTRAORDINARIO);
+                this.columnID_ESTUDIANTE = new global::System.Data.DataColumn("ID_ESTUDIANTE", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_ESTUDIANTE);
                 this.columnESTUDIANTE = new global::System.Data.DataColumn("ESTUDIANTE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnESTUDIANTE);
-                this.columnSECCION = new global::System.Data.DataColumn("SECCION", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSECCION);
                 this.columnGRADO = new global::System.Data.DataColumn("GRADO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGRADO);
-                this.columnMATRICULA = new global::System.Data.DataColumn("MATRICULA", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMATRICULA);
-                this.columnMAESTRO_ENCARGADO = new global::System.Data.DataColumn("MAESTRO_ENCARGADO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMAESTRO_ENCARGADO);
-                this.columnCOORDINADOR_PEDAGOGICO = new global::System.Data.DataColumn("COORDINADOR_PEDAGOGICO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCOORDINADOR_PEDAGOGICO);
+                this.columnSECCION = new global::System.Data.DataColumn("SECCION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSECCION);
+                this.columnASIGNATURA = new global::System.Data.DataColumn("ASIGNATURA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnASIGNATURA);
+                this.columnDOCENTE = new global::System.Data.DataColumn("DOCENTE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDOCENTE);
                 this.columnPERIODO = new global::System.Data.DataColumn("PERIODO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPERIODO);
-                this.columnNOMBRE_CENTRO = new global::System.Data.DataColumn("NOMBRE_CENTRO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNOMBRE_CENTRO);
-                this.columnASIGNATURA.MaxLength = 50;
-                this.columnFINAL.ReadOnly = true;
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_ESTUDIANTE}, true));
+                this.columnID_ESTUDIANTE.AutoIncrement = true;
+                this.columnID_ESTUDIANTE.AllowDBNull = false;
+                this.columnID_ESTUDIANTE.ReadOnly = true;
+                this.columnID_ESTUDIANTE.Unique = true;
                 this.columnESTUDIANTE.MaxLength = 50;
-                this.columnSECCION.MaxLength = 25;
                 this.columnGRADO.MaxLength = 25;
-                this.columnMAESTRO_ENCARGADO.MaxLength = 50;
-                this.columnCOORDINADOR_PEDAGOGICO.MaxLength = 50;
+                this.columnSECCION.MaxLength = 25;
+                this.columnASIGNATURA.MaxLength = 50;
+                this.columnDOCENTE.MaxLength = 50;
                 this.columnPERIODO.MaxLength = 15;
-                this.columnNOMBRE_CENTRO.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public usp_Presentacion_ImprimirCalificacionesRow Newusp_Presentacion_ImprimirCalificacionesRow() {
-                return ((usp_Presentacion_ImprimirCalificacionesRow)(this.NewRow()));
+            public MateriasPendientesRow NewMateriasPendientesRow() {
+                return ((MateriasPendientesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new usp_Presentacion_ImprimirCalificacionesRow(builder);
+                return new MateriasPendientesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(usp_Presentacion_ImprimirCalificacionesRow);
+                return typeof(MateriasPendientesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.usp_Presentacion_ImprimirCalificacionesRowChanged != null)) {
-                    this.usp_Presentacion_ImprimirCalificacionesRowChanged(this, new usp_Presentacion_ImprimirCalificacionesRowChangeEvent(((usp_Presentacion_ImprimirCalificacionesRow)(e.Row)), e.Action));
+                if ((this.MateriasPendientesRowChanged != null)) {
+                    this.MateriasPendientesRowChanged(this, new MateriasPendientesRowChangeEvent(((MateriasPendientesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -676,8 +529,8 @@ namespace Proyecto_Final {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.usp_Presentacion_ImprimirCalificacionesRowChanging != null)) {
-                    this.usp_Presentacion_ImprimirCalificacionesRowChanging(this, new usp_Presentacion_ImprimirCalificacionesRowChangeEvent(((usp_Presentacion_ImprimirCalificacionesRow)(e.Row)), e.Action));
+                if ((this.MateriasPendientesRowChanging != null)) {
+                    this.MateriasPendientesRowChanging(this, new MateriasPendientesRowChangeEvent(((MateriasPendientesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -685,8 +538,8 @@ namespace Proyecto_Final {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.usp_Presentacion_ImprimirCalificacionesRowDeleted != null)) {
-                    this.usp_Presentacion_ImprimirCalificacionesRowDeleted(this, new usp_Presentacion_ImprimirCalificacionesRowChangeEvent(((usp_Presentacion_ImprimirCalificacionesRow)(e.Row)), e.Action));
+                if ((this.MateriasPendientesRowDeleted != null)) {
+                    this.MateriasPendientesRowDeleted(this, new MateriasPendientesRowChangeEvent(((MateriasPendientesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -694,14 +547,14 @@ namespace Proyecto_Final {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.usp_Presentacion_ImprimirCalificacionesRowDeleting != null)) {
-                    this.usp_Presentacion_ImprimirCalificacionesRowDeleting(this, new usp_Presentacion_ImprimirCalificacionesRowChangeEvent(((usp_Presentacion_ImprimirCalificacionesRow)(e.Row)), e.Action));
+                if ((this.MateriasPendientesRowDeleting != null)) {
+                    this.MateriasPendientesRowDeleting(this, new MateriasPendientesRowChangeEvent(((MateriasPendientesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Removeusp_Presentacion_ImprimirCalificacionesRow(usp_Presentacion_ImprimirCalificacionesRow row) {
+            public void RemoveMateriasPendientesRow(MateriasPendientesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -710,7 +563,7 @@ namespace Proyecto_Final {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetCalificaciones ds = new DataSetCalificaciones();
+                DataSetMateriasPendientes ds = new DataSetMateriasPendientes();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -728,7 +581,7 @@ namespace Proyecto_Final {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "usp_Presentacion_ImprimirCalificacionesDataTable";
+                attribute2.FixedValue = "MateriasPendientesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -772,167 +625,25 @@ namespace Proyecto_Final {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class usp_Presentacion_ImprimirCalificacionesRow : global::System.Data.DataRow {
+        public partial class MateriasPendientesRow : global::System.Data.DataRow {
             
-            private usp_Presentacion_ImprimirCalificacionesDataTable tableusp_Presentacion_ImprimirCalificaciones;
+            private MateriasPendientesDataTable tableMateriasPendientes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal usp_Presentacion_ImprimirCalificacionesRow(global::System.Data.DataRowBuilder rb) : 
+            internal MateriasPendientesRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableusp_Presentacion_ImprimirCalificaciones = ((usp_Presentacion_ImprimirCalificacionesDataTable)(this.Table));
+                this.tableMateriasPendientes = ((MateriasPendientesDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ASIGNATURA {
+            public int ID_ESTUDIANTE {
                 get {
-                    try {
-                        return ((string)(this[this.tableusp_Presentacion_ImprimirCalificaciones.ASIGNATURAColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ASIGNATURA\' de la tabla \'usp_Presentacion_ImprimirCalific" +
-                                "aciones\' es DBNull.", e);
-                    }
+                    return ((int)(this[this.tableMateriasPendientes.ID_ESTUDIANTEColumn]));
                 }
                 set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.ASIGNATURAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int DOCENTE {
-                get {
-                    try {
-                        return ((int)(this[this.tableusp_Presentacion_ImprimirCalificaciones.DOCENTEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DOCENTE\' de la tabla \'usp_Presentacion_ImprimirCalificaci" +
-                                "ones\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.DOCENTEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int PRIMER_REPORTE {
-                get {
-                    try {
-                        return ((int)(this[this.tableusp_Presentacion_ImprimirCalificaciones.PRIMER_REPORTEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PRIMER_REPORTE\' de la tabla \'usp_Presentacion_ImprimirCal" +
-                                "ificaciones\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.PRIMER_REPORTEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int SEGUNDO_REPORTE {
-                get {
-                    try {
-                        return ((int)(this[this.tableusp_Presentacion_ImprimirCalificaciones.SEGUNDO_REPORTEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SEGUNDO_REPORTE\' de la tabla \'usp_Presentacion_ImprimirCa" +
-                                "lificaciones\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.SEGUNDO_REPORTEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int TERCER_REPORTE {
-                get {
-                    try {
-                        return ((int)(this[this.tableusp_Presentacion_ImprimirCalificaciones.TERCER_REPORTEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TERCER_REPORTE\' de la tabla \'usp_Presentacion_ImprimirCal" +
-                                "ificaciones\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.TERCER_REPORTEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int CUARTO_REPORTE {
-                get {
-                    try {
-                        return ((int)(this[this.tableusp_Presentacion_ImprimirCalificaciones.CUARTO_REPORTEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CUARTO_REPORTE\' de la tabla \'usp_Presentacion_ImprimirCal" +
-                                "ificaciones\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.CUARTO_REPORTEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int FINAL {
-                get {
-                    try {
-                        return ((int)(this[this.tableusp_Presentacion_ImprimirCalificaciones.FINALColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FINAL\' de la tabla \'usp_Presentacion_ImprimirCalificacion" +
-                                "es\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.FINALColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int COMPLETIVO {
-                get {
-                    try {
-                        return ((int)(this[this.tableusp_Presentacion_ImprimirCalificaciones.COMPLETIVOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'COMPLETIVO\' de la tabla \'usp_Presentacion_ImprimirCalific" +
-                                "aciones\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.COMPLETIVOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int EXTRAORDINARIO {
-                get {
-                    try {
-                        return ((int)(this[this.tableusp_Presentacion_ImprimirCalificaciones.EXTRAORDINARIOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'EXTRAORDINARIO\' de la tabla \'usp_Presentacion_ImprimirCal" +
-                                "ificaciones\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.EXTRAORDINARIOColumn] = value;
+                    this[this.tableMateriasPendientes.ID_ESTUDIANTEColumn] = value;
                 }
             }
             
@@ -941,32 +652,14 @@ namespace Proyecto_Final {
             public string ESTUDIANTE {
                 get {
                     try {
-                        return ((string)(this[this.tableusp_Presentacion_ImprimirCalificaciones.ESTUDIANTEColumn]));
+                        return ((string)(this[this.tableMateriasPendientes.ESTUDIANTEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ESTUDIANTE\' de la tabla \'usp_Presentacion_ImprimirCalific" +
-                                "aciones\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ESTUDIANTE\' de la tabla \'MateriasPendientes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.ESTUDIANTEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string SECCION {
-                get {
-                    try {
-                        return ((string)(this[this.tableusp_Presentacion_ImprimirCalificaciones.SECCIONColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SECCION\' de la tabla \'usp_Presentacion_ImprimirCalificaci" +
-                                "ones\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.SECCIONColumn] = value;
+                    this[this.tableMateriasPendientes.ESTUDIANTEColumn] = value;
                 }
             }
             
@@ -975,66 +668,62 @@ namespace Proyecto_Final {
             public string GRADO {
                 get {
                     try {
-                        return ((string)(this[this.tableusp_Presentacion_ImprimirCalificaciones.GRADOColumn]));
+                        return ((string)(this[this.tableMateriasPendientes.GRADOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'GRADO\' de la tabla \'usp_Presentacion_ImprimirCalificacion" +
-                                "es\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'GRADO\' de la tabla \'MateriasPendientes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.GRADOColumn] = value;
+                    this[this.tableMateriasPendientes.GRADOColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int MATRICULA {
+            public string SECCION {
                 get {
                     try {
-                        return ((int)(this[this.tableusp_Presentacion_ImprimirCalificaciones.MATRICULAColumn]));
+                        return ((string)(this[this.tableMateriasPendientes.SECCIONColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MATRICULA\' de la tabla \'usp_Presentacion_ImprimirCalifica" +
-                                "ciones\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SECCION\' de la tabla \'MateriasPendientes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.MATRICULAColumn] = value;
+                    this[this.tableMateriasPendientes.SECCIONColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string MAESTRO_ENCARGADO {
+            public string ASIGNATURA {
                 get {
                     try {
-                        return ((string)(this[this.tableusp_Presentacion_ImprimirCalificaciones.MAESTRO_ENCARGADOColumn]));
+                        return ((string)(this[this.tableMateriasPendientes.ASIGNATURAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MAESTRO_ENCARGADO\' de la tabla \'usp_Presentacion_Imprimir" +
-                                "Calificaciones\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ASIGNATURA\' de la tabla \'MateriasPendientes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.MAESTRO_ENCARGADOColumn] = value;
+                    this[this.tableMateriasPendientes.ASIGNATURAColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string COORDINADOR_PEDAGOGICO {
+            public string DOCENTE {
                 get {
                     try {
-                        return ((string)(this[this.tableusp_Presentacion_ImprimirCalificaciones.COORDINADOR_PEDAGOGICOColumn]));
+                        return ((string)(this[this.tableMateriasPendientes.DOCENTEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'COORDINADOR_PEDAGOGICO\' de la tabla \'usp_Presentacion_Imp" +
-                                "rimirCalificaciones\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DOCENTE\' de la tabla \'MateriasPendientes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.COORDINADOR_PEDAGOGICOColumn] = value;
+                    this[this.tableMateriasPendientes.DOCENTEColumn] = value;
                 }
             }
             
@@ -1043,237 +732,87 @@ namespace Proyecto_Final {
             public string PERIODO {
                 get {
                     try {
-                        return ((string)(this[this.tableusp_Presentacion_ImprimirCalificaciones.PERIODOColumn]));
+                        return ((string)(this[this.tableMateriasPendientes.PERIODOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PERIODO\' de la tabla \'usp_Presentacion_ImprimirCalificaci" +
-                                "ones\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PERIODO\' de la tabla \'MateriasPendientes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.PERIODOColumn] = value;
+                    this[this.tableMateriasPendientes.PERIODOColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NOMBRE_CENTRO {
-                get {
-                    try {
-                        return ((string)(this[this.tableusp_Presentacion_ImprimirCalificaciones.NOMBRE_CENTROColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NOMBRE_CENTRO\' de la tabla \'usp_Presentacion_ImprimirCali" +
-                                "ficaciones\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableusp_Presentacion_ImprimirCalificaciones.NOMBRE_CENTROColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsASIGNATURANull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.ASIGNATURAColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetASIGNATURANull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.ASIGNATURAColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDOCENTENull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.DOCENTEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDOCENTENull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.DOCENTEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPRIMER_REPORTENull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.PRIMER_REPORTEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPRIMER_REPORTENull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.PRIMER_REPORTEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSEGUNDO_REPORTENull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.SEGUNDO_REPORTEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSEGUNDO_REPORTENull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.SEGUNDO_REPORTEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTERCER_REPORTENull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.TERCER_REPORTEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTERCER_REPORTENull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.TERCER_REPORTEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCUARTO_REPORTENull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.CUARTO_REPORTEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCUARTO_REPORTENull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.CUARTO_REPORTEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsFINALNull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.FINALColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetFINALNull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.FINALColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCOMPLETIVONull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.COMPLETIVOColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCOMPLETIVONull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.COMPLETIVOColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsEXTRAORDINARIONull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.EXTRAORDINARIOColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetEXTRAORDINARIONull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.EXTRAORDINARIOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsESTUDIANTENull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.ESTUDIANTEColumn);
+                return this.IsNull(this.tableMateriasPendientes.ESTUDIANTEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetESTUDIANTENull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.ESTUDIANTEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSECCIONNull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.SECCIONColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSECCIONNull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.SECCIONColumn] = global::System.Convert.DBNull;
+                this[this.tableMateriasPendientes.ESTUDIANTEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsGRADONull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.GRADOColumn);
+                return this.IsNull(this.tableMateriasPendientes.GRADOColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetGRADONull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.GRADOColumn] = global::System.Convert.DBNull;
+                this[this.tableMateriasPendientes.GRADOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsMATRICULANull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.MATRICULAColumn);
+            public bool IsSECCIONNull() {
+                return this.IsNull(this.tableMateriasPendientes.SECCIONColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetMATRICULANull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.MATRICULAColumn] = global::System.Convert.DBNull;
+            public void SetSECCIONNull() {
+                this[this.tableMateriasPendientes.SECCIONColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsMAESTRO_ENCARGADONull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.MAESTRO_ENCARGADOColumn);
+            public bool IsASIGNATURANull() {
+                return this.IsNull(this.tableMateriasPendientes.ASIGNATURAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetMAESTRO_ENCARGADONull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.MAESTRO_ENCARGADOColumn] = global::System.Convert.DBNull;
+            public void SetASIGNATURANull() {
+                this[this.tableMateriasPendientes.ASIGNATURAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCOORDINADOR_PEDAGOGICONull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.COORDINADOR_PEDAGOGICOColumn);
+            public bool IsDOCENTENull() {
+                return this.IsNull(this.tableMateriasPendientes.DOCENTEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCOORDINADOR_PEDAGOGICONull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.COORDINADOR_PEDAGOGICOColumn] = global::System.Convert.DBNull;
+            public void SetDOCENTENull() {
+                this[this.tableMateriasPendientes.DOCENTEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsPERIODONull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.PERIODOColumn);
+                return this.IsNull(this.tableMateriasPendientes.PERIODOColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPERIODONull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.PERIODOColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNOMBRE_CENTRONull() {
-                return this.IsNull(this.tableusp_Presentacion_ImprimirCalificaciones.NOMBRE_CENTROColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNOMBRE_CENTRONull() {
-                this[this.tableusp_Presentacion_ImprimirCalificaciones.NOMBRE_CENTROColumn] = global::System.Convert.DBNull;
+                this[this.tableMateriasPendientes.PERIODOColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1281,22 +820,22 @@ namespace Proyecto_Final {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class usp_Presentacion_ImprimirCalificacionesRowChangeEvent : global::System.EventArgs {
+        public class MateriasPendientesRowChangeEvent : global::System.EventArgs {
             
-            private usp_Presentacion_ImprimirCalificacionesRow eventRow;
+            private MateriasPendientesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public usp_Presentacion_ImprimirCalificacionesRowChangeEvent(usp_Presentacion_ImprimirCalificacionesRow row, global::System.Data.DataRowAction action) {
+            public MateriasPendientesRowChangeEvent(MateriasPendientesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public usp_Presentacion_ImprimirCalificacionesRow Row {
+            public MateriasPendientesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1312,7 +851,7 @@ namespace Proyecto_Final {
         }
     }
 }
-namespace Proyecto_Final.DataSetCalificacionesTableAdapters {
+namespace Proyecto_Final.DataSetMateriasPendientesTableAdapters {
     
     
     /// <summary>
@@ -1324,7 +863,7 @@ namespace Proyecto_Final.DataSetCalificacionesTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class usp_Presentacion_ImprimirCalificacionesTableAdapter : global::System.ComponentModel.Component {
+    public partial class MateriasPendientesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1338,7 +877,7 @@ namespace Proyecto_Final.DataSetCalificacionesTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public usp_Presentacion_ImprimirCalificacionesTableAdapter() {
+        public MateriasPendientesTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1435,24 +974,14 @@ namespace Proyecto_Final.DataSetCalificacionesTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "usp_Presentacion_ImprimirCalificaciones";
+            tableMapping.DataSetTable = "MateriasPendientes";
+            tableMapping.ColumnMappings.Add("ID_ESTUDIANTE", "ID_ESTUDIANTE");
+            tableMapping.ColumnMappings.Add("ESTUDIANTE", "ESTUDIANTE");
+            tableMapping.ColumnMappings.Add("GRADO", "GRADO");
+            tableMapping.ColumnMappings.Add("SECCION", "SECCION");
             tableMapping.ColumnMappings.Add("ASIGNATURA", "ASIGNATURA");
             tableMapping.ColumnMappings.Add("DOCENTE", "DOCENTE");
-            tableMapping.ColumnMappings.Add("PRIMER_REPORTE", "PRIMER_REPORTE");
-            tableMapping.ColumnMappings.Add("SEGUNDO_REPORTE", "SEGUNDO_REPORTE");
-            tableMapping.ColumnMappings.Add("TERCER_REPORTE", "TERCER_REPORTE");
-            tableMapping.ColumnMappings.Add("CUARTO_REPORTE", "CUARTO_REPORTE");
-            tableMapping.ColumnMappings.Add("FINAL", "FINAL");
-            tableMapping.ColumnMappings.Add("COMPLETIVO", "COMPLETIVO");
-            tableMapping.ColumnMappings.Add("EXTRAORDINARIO", "EXTRAORDINARIO");
-            tableMapping.ColumnMappings.Add("ESTUDIANTE", "ESTUDIANTE");
-            tableMapping.ColumnMappings.Add("SECCION", "SECCION");
-            tableMapping.ColumnMappings.Add("GRADO", "GRADO");
-            tableMapping.ColumnMappings.Add("MATRICULA", "MATRICULA");
-            tableMapping.ColumnMappings.Add("MAESTRO_ENCARGADO", "MAESTRO_ENCARGADO");
-            tableMapping.ColumnMappings.Add("COORDINADOR_PEDAGOGICO", "COORDINADOR_PEDAGOGICO");
             tableMapping.ColumnMappings.Add("PERIODO", "PERIODO");
-            tableMapping.ColumnMappings.Add("NOMBRE_CENTRO", "NOMBRE_CENTRO");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1469,31 +998,17 @@ namespace Proyecto_Final.DataSetCalificacionesTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.usp_Presentacion_ImprimirCalificaciones";
+            this._commandCollection[0].CommandText = "dbo.MateriasPendientes";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SECCION", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTUDIANTE_AUX_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetCalificaciones.usp_Presentacion_ImprimirCalificacionesDataTable dataTable, global::System.Nullable<int> SECCION, global::System.Nullable<int> ESTUDIANTE_AUX_ID) {
+        public virtual int Fill(DataSetMateriasPendientes.MateriasPendientesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((SECCION.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(SECCION.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((ESTUDIANTE_AUX_ID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(ESTUDIANTE_AUX_ID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1505,21 +1020,9 @@ namespace Proyecto_Final.DataSetCalificacionesTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetCalificaciones.usp_Presentacion_ImprimirCalificacionesDataTable GetData(global::System.Nullable<int> SECCION, global::System.Nullable<int> ESTUDIANTE_AUX_ID) {
+        public virtual DataSetMateriasPendientes.MateriasPendientesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((SECCION.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(SECCION.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((ESTUDIANTE_AUX_ID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(ESTUDIANTE_AUX_ID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            DataSetCalificaciones.usp_Presentacion_ImprimirCalificacionesDataTable dataTable = new DataSetCalificaciones.usp_Presentacion_ImprimirCalificacionesDataTable();
+            DataSetMateriasPendientes.MateriasPendientesDataTable dataTable = new DataSetMateriasPendientes.MateriasPendientesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1593,7 +1096,7 @@ namespace Proyecto_Final.DataSetCalificacionesTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DataSetCalificaciones dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSetMateriasPendientes dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1603,7 +1106,7 @@ namespace Proyecto_Final.DataSetCalificacionesTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DataSetCalificaciones dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSetMateriasPendientes dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1613,7 +1116,7 @@ namespace Proyecto_Final.DataSetCalificacionesTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DataSetCalificaciones dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSetMateriasPendientes dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1647,7 +1150,7 @@ namespace Proyecto_Final.DataSetCalificacionesTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DataSetCalificaciones dataSet) {
+        public virtual int UpdateAll(DataSetMateriasPendientes dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

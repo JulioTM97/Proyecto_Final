@@ -45,6 +45,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDocente = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +56,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(27, 44);
+            this.txtID.Location = new System.Drawing.Point(136, 17);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(70, 21);
             this.txtID.TabIndex = 1;
@@ -63,7 +65,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 46);
+            this.label2.Location = new System.Drawing.Point(111, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 15);
             this.label2.TabIndex = 0;
@@ -108,12 +110,13 @@
             this.btnModificarSeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarSeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarSeccion.ForeColor = System.Drawing.Color.White;
-            this.btnModificarSeccion.Location = new System.Drawing.Point(207, 208);
+            this.btnModificarSeccion.Location = new System.Drawing.Point(184, 223);
             this.btnModificarSeccion.Name = "btnModificarSeccion";
             this.btnModificarSeccion.Size = new System.Drawing.Size(130, 23);
             this.btnModificarSeccion.TabIndex = 7;
             this.btnModificarSeccion.Text = "Modificar Sección";
             this.btnModificarSeccion.UseVisualStyleBackColor = false;
+            this.btnModificarSeccion.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnModificarSeccion.Click += new System.EventHandler(this.btnModificarSeccion_Click);
             // 
             // btnCancelar
@@ -124,12 +127,13 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(279, 296);
+            this.btnCancelar.Location = new System.Drawing.Point(256, 311);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(58, 23);
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
@@ -140,12 +144,13 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(207, 296);
+            this.btnAceptar.Location = new System.Drawing.Point(184, 311);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(58, 23);
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnAgregarSeccion
@@ -156,12 +161,13 @@
             this.btnAgregarSeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarSeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarSeccion.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarSeccion.Location = new System.Drawing.Point(207, 165);
+            this.btnAgregarSeccion.Location = new System.Drawing.Point(184, 180);
             this.btnAgregarSeccion.Name = "btnAgregarSeccion";
             this.btnAgregarSeccion.Size = new System.Drawing.Size(130, 23);
             this.btnAgregarSeccion.TabIndex = 6;
             this.btnAgregarSeccion.Text = "Agregar Sección";
             this.btnAgregarSeccion.UseVisualStyleBackColor = false;
+            this.btnAgregarSeccion.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnAgregarSeccion.Click += new System.EventHandler(this.btnAgregarSeccion_Click);
             // 
             // btnEliminarSeccion
@@ -172,19 +178,20 @@
             this.btnEliminarSeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarSeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarSeccion.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarSeccion.Location = new System.Drawing.Point(207, 249);
+            this.btnEliminarSeccion.Location = new System.Drawing.Point(184, 264);
             this.btnEliminarSeccion.Name = "btnEliminarSeccion";
             this.btnEliminarSeccion.Size = new System.Drawing.Size(130, 23);
             this.btnEliminarSeccion.TabIndex = 8;
             this.btnEliminarSeccion.Text = "Eliminar Sección";
             this.btnEliminarSeccion.UseVisualStyleBackColor = false;
+            this.btnEliminarSeccion.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnEliminarSeccion.Click += new System.EventHandler(this.btnEliminarSeccion_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 103);
+            this.label1.Location = new System.Drawing.Point(7, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 15);
             this.label1.TabIndex = 4;
@@ -193,7 +200,7 @@
             // txtSeccion
             // 
             this.txtSeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSeccion.Location = new System.Drawing.Point(185, 102);
+            this.txtSeccion.Location = new System.Drawing.Point(136, 73);
             this.txtSeccion.MaxLength = 25;
             this.txtSeccion.Name = "txtSeccion";
             this.txtSeccion.Size = new System.Drawing.Size(178, 21);
@@ -203,7 +210,7 @@
             // 
             this.txtGrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGrado.FormattingEnabled = true;
-            this.txtGrado.Location = new System.Drawing.Point(185, 43);
+            this.txtGrado.Location = new System.Drawing.Point(136, 44);
             this.txtGrado.Name = "txtGrado";
             this.txtGrado.Size = new System.Drawing.Size(178, 23);
             this.txtGrado.TabIndex = 3;
@@ -213,7 +220,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(145, 46);
+            this.label3.Location = new System.Drawing.Point(89, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 15);
             this.label3.TabIndex = 2;
@@ -222,18 +229,18 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label11.Location = new System.Drawing.Point(12, 96);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(180, 23);
+            this.label11.Size = new System.Drawing.Size(190, 24);
             this.label11.TabIndex = 28;
             this.label11.Text = "Consultar Sesiones";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(24, 165);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 180);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(158, 154);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -243,10 +250,12 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.txtDocente);
             this.groupBox2.Controls.Add(this.txtGrado);
             this.groupBox2.Controls.Add(this.txtSeccion);
             this.groupBox2.Controls.Add(this.txtID);
             this.groupBox2.Controls.Add(this.btnEliminarSeccion);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btnAgregarSeccion);
             this.groupBox2.Controls.Add(this.btnAceptar);
@@ -260,6 +269,24 @@
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar sesiones";
+            // 
+            // txtDocente
+            // 
+            this.txtDocente.FormattingEnabled = true;
+            this.txtDocente.Location = new System.Drawing.Point(136, 100);
+            this.txtDocente.Name = "txtDocente";
+            this.txtDocente.Size = new System.Drawing.Size(178, 21);
+            this.txtDocente.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 15);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Maestro Encargado";
             // 
             // FrmSeccion
             // 
@@ -303,5 +330,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox txtDocente;
+        private System.Windows.Forms.Label label4;
     }
 }

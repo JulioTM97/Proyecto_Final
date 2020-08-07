@@ -30,6 +30,8 @@ namespace Proyecto_Final.Presentacion
                 DataSet ds = FEstudiante.GetAll();
                 dt = ds.Tables[0];
                 dgvEstudiante.DataSource = dt;
+                dgvEstudiante.Columns["ID"].Visible = false;
+
 
             }
             catch (Exception exception)

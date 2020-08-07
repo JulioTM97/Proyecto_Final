@@ -45,6 +45,8 @@ namespace Proyecto_Final.Presentacion
                     dgvEstudiante.DataSource = dt;
                     dgvEstudiante.Columns["SECCION_ID"].Visible = false;
                     dgvEstudiante.Columns["ESTUDIANTE_AUX_ID"].Visible = false;
+                    dgvEstudiante.Columns["ID"].Visible = false;
+
 
                 }
                 catch (Exception exception)
@@ -306,6 +308,14 @@ namespace Proyecto_Final.Presentacion
         private void btnModificarEstudiante_Click(object sender, EventArgs e)
         {
             cambios("modificar");
+        }
+
+        private void btnEnabledChangeEvent(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == null) return;
+            if (button.Enabled) button.BackColor = Color.FromArgb(0, 122, 204);
+            else button.BackColor = Color.Gray;
         }
     }
 }

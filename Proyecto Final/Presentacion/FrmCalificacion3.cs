@@ -17,12 +17,14 @@ namespace Proyecto_Final.Presentacion
         Calificacion calificacion;
         Estudiante estudiante;
         Seccion seccion;
-        public FrmCalificacion3(Calificacion _calificacion, Estudiante _estudiante,Seccion _seccion)
+        FrmCalificacion2 frmCalificacion2;
+        public FrmCalificacion3(FrmCalificacion2 _frmCalificacion2,Calificacion _calificacion, Estudiante _estudiante,Seccion _seccion)
         {
             InitializeComponent();
             calificacion = _calificacion;
             estudiante = _estudiante;
             seccion = _seccion;
+            frmCalificacion2 = _frmCalificacion2;
         }
 
         private void FrmCalificacion3_Load(object sender, EventArgs e)
@@ -56,7 +58,11 @@ namespace Proyecto_Final.Presentacion
                 calificacion.completivo = Convert.ToInt32(txtCompletivo.Value);
                 calificacion.extraordinario = Convert.ToInt32(txtExtraordinario.Value);
 
-                if (FCalificacion.EvaluarEstudiante(calificacion) > 0) MessageBox.Show("Estudiante evaluado con exito!");
+                if (FCalificacion.EvaluarEstudiante(calificacion) > 0)
+                {
+                    MessageBox.Show("Estudiante evaluado con exito!");
+                    this.Close();
+                }
                 else MessageBox.Show("El estudiante no se pudo ser evaluado.");
             }
             catch (Exception exception)
@@ -68,6 +74,11 @@ namespace Proyecto_Final.Presentacion
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmCalificacion3_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmCalificacion2.CargarDataGridView();
         }
     }
 }

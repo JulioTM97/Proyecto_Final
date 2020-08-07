@@ -311,11 +311,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(488, 349);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmCalificacion3";
-            this.Text = "FrmCalificacion3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Evaluar Estudiante";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmCalificacion3_FormClosed);
             this.Load += new System.EventHandler(this.FrmCalificacion3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtPrimer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSegundo)).EndInit();

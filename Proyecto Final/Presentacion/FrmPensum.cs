@@ -72,6 +72,8 @@ namespace Proyecto_Final.Presentacion
                     dt = ds.Tables[0];
                     dgvPensum.DataSource = dt;
                     dgvPensum.Columns["ASIGNATURA_AUX_ID"].Visible = false;
+                    dgvPensum.Columns["ID"].Visible = false;
+
 
                 }
                 catch (Exception exception)
@@ -106,6 +108,14 @@ namespace Proyecto_Final.Presentacion
                 MessageBox.Show(exception.Message + exception.StackTrace);
             }
             CargarDataGridView();
+        }
+
+        private void btnEnabledChangeEvent(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == null) return;
+            if (button.Enabled) button.BackColor = Color.FromArgb(0, 122, 204);
+            else button.BackColor = Color.Gray;
         }
     }
 }

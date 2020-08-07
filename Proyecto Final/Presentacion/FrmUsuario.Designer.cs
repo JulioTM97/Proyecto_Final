@@ -54,14 +54,14 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
-            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,6 +100,7 @@
             this.btnLimpiarFiltro.TabIndex = 26;
             this.btnLimpiarFiltro.Text = "Limpiar Busqueda";
             this.btnLimpiarFiltro.UseVisualStyleBackColor = false;
+            this.btnLimpiarFiltro.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnLimpiarFiltro.Click += new System.EventHandler(this.btnLimpiarFiltro_Click);
             // 
             // btnFiltrar
@@ -118,6 +119,7 @@
             this.btnFiltrar.TabIndex = 25;
             this.btnFiltrar.Text = "Buscar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // txtMostrar
@@ -182,6 +184,7 @@
             this.btnAgregarUsuario.TabIndex = 17;
             this.btnAgregarUsuario.Text = "Agregar Usuario";
             this.btnAgregarUsuario.UseVisualStyleBackColor = false;
+            this.btnAgregarUsuario.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
             // label2
@@ -306,6 +309,7 @@
             this.btnModificarUsuario.TabIndex = 18;
             this.btnModificarUsuario.Text = "Modificar Usuario";
             this.btnModificarUsuario.UseVisualStyleBackColor = false;
+            this.btnModificarUsuario.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnModificarUsuario.Click += new System.EventHandler(this.btnModificarUsuario_Click);
             // 
             // btnEliminarUsuario
@@ -322,6 +326,7 @@
             this.btnEliminarUsuario.TabIndex = 19;
             this.btnEliminarUsuario.Text = "Eliminar Usuario";
             this.btnEliminarUsuario.UseVisualStyleBackColor = false;
+            this.btnEliminarUsuario.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
             // 
             // btnAceptar
@@ -338,6 +343,7 @@
             this.btnAceptar.TabIndex = 20;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
@@ -354,6 +360,7 @@
             this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // groupBox2
@@ -392,6 +399,23 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Usuario";
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(129, 93);
+            this.txtCedula.Mask = "000-0000000-0";
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(91, 20);
+            this.txtCedula.TabIndex = 28;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(129, 119);
+            this.txtTelefono.Mask = "(999)000-0000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(91, 21);
+            this.txtTelefono.TabIndex = 6;
             // 
             // pictureBox1
             // 
@@ -463,23 +487,6 @@
             this.label11.Size = new System.Drawing.Size(387, 24);
             this.label11.TabIndex = 27;
             this.label11.Text = "Consultar Personal del Centro Educativo";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(129, 119);
-            this.txtTelefono.Mask = "(999)000-0000";
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(91, 21);
-            this.txtTelefono.TabIndex = 6;
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Location = new System.Drawing.Point(129, 93);
-            this.txtCedula.Mask = "000-0000000-0";
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(91, 20);
-            this.txtCedula.TabIndex = 28;
             // 
             // FrmUsuario
             // 

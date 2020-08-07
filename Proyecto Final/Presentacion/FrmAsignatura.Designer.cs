@@ -34,18 +34,18 @@
             this.btnAgregarAsignatura = new System.Windows.Forms.Button();
             this.rbNuevaAsignatura = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNombreNuevo = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.rbAsignaturaExistente = new System.Windows.Forms.RadioButton();
             this.btnModificarAsignatura = new System.Windows.Forms.Button();
             this.btnEliminarAsignatura = new System.Windows.Forms.Button();
             this.txtNombreExistente = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvAsignatura = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.txtNombreNuevo = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignatura)).BeginInit();
@@ -94,6 +94,7 @@
             this.btnAgregarAsignatura.TabIndex = 3;
             this.btnAgregarAsignatura.Text = "Agregar Asignatura";
             this.btnAgregarAsignatura.UseVisualStyleBackColor = false;
+            this.btnAgregarAsignatura.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnAgregarAsignatura.Click += new System.EventHandler(this.btnAgregarAsignatura_Click);
             // 
             // rbNuevaAsignatura
@@ -135,6 +136,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la Asignatura";
             // 
+            // txtNombreNuevo
+            // 
+            this.txtNombreNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreNuevo.Location = new System.Drawing.Point(148, 121);
+            this.txtNombreNuevo.Name = "txtNombreNuevo";
+            this.txtNombreNuevo.Size = new System.Drawing.Size(230, 21);
+            this.txtNombreNuevo.TabIndex = 6;
+            this.txtNombreNuevo.Visible = false;
+            // 
+            // txtID
+            // 
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(148, 20);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(70, 21);
+            this.txtID.TabIndex = 6;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -149,6 +167,7 @@
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
@@ -165,6 +184,7 @@
             this.btnAceptar.TabIndex = 5;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // rbAsignaturaExistente
@@ -192,6 +212,7 @@
             this.btnModificarAsignatura.TabIndex = 3;
             this.btnModificarAsignatura.Text = "Modificar Asignatura";
             this.btnModificarAsignatura.UseVisualStyleBackColor = false;
+            this.btnModificarAsignatura.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnModificarAsignatura.Click += new System.EventHandler(this.btnModificarAsignatura_Click);
             // 
             // btnEliminarAsignatura
@@ -208,6 +229,7 @@
             this.btnEliminarAsignatura.TabIndex = 3;
             this.btnEliminarAsignatura.Text = "Eliminar Asignatura";
             this.btnEliminarAsignatura.UseVisualStyleBackColor = false;
+            this.btnEliminarAsignatura.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnEliminarAsignatura.Click += new System.EventHandler(this.btnEliminarAsignatura_Click);
             // 
             // txtNombreExistente
@@ -218,6 +240,16 @@
             this.txtNombreExistente.Name = "txtNombreExistente";
             this.txtNombreExistente.Size = new System.Drawing.Size(230, 23);
             this.txtNombreExistente.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(123, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(19, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "ID";
             // 
             // groupBox2
             // 
@@ -260,33 +292,6 @@
             this.label11.Size = new System.Drawing.Size(213, 24);
             this.label11.TabIndex = 28;
             this.label11.Text = "Consultar Asignaturas";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(123, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "ID";
-            // 
-            // txtID
-            // 
-            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(148, 20);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(70, 21);
-            this.txtID.TabIndex = 6;
-            // 
-            // txtNombreNuevo
-            // 
-            this.txtNombreNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreNuevo.Location = new System.Drawing.Point(148, 121);
-            this.txtNombreNuevo.Name = "txtNombreNuevo";
-            this.txtNombreNuevo.Size = new System.Drawing.Size(230, 21);
-            this.txtNombreNuevo.TabIndex = 6;
-            this.txtNombreNuevo.Visible = false;
             // 
             // FrmAsignatura
             // 

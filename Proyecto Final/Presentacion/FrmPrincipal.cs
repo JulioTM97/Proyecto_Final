@@ -82,7 +82,7 @@ namespace Proyecto_Final.Presentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void AbrirFormEnPanel(object Formhijo)
+        internal void AbrirFormEnPanel(object Formhijo)
         {
             if (this.panelContenedor.Controls.Count > 0)
                 this.panelContenedor.Controls.RemoveAt(0);
@@ -112,6 +112,18 @@ namespace Proyecto_Final.Presentacion
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             Mostrar_Formulario_Inicio_Click(null, e);
+            if (usuarioActivo.rol != "REGISTRO")
+            {
+                //codigo si no es registro
+                btncp.Enabled = false;
+                btnca.Enabled = false;
+                btnce.Enabled = false;
+                btncs.Enabled = false;
+                btncg.Enabled = false;
+                btncpen.Enabled = false;
+                btnPeriodos.Enabled = false;
+                
+            }
         }
 
         private void btncp_Click(object sender, EventArgs e)
@@ -131,17 +143,18 @@ namespace Proyecto_Final.Presentacion
 
         private void btncd_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new FrmInstitucion());
+            AbrirFormEnPanel(new FrmInstitucion(this));
         }
 
         private void btnca_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new FrmAsignatura());
+            AbrirFormEnPanel(new FrmAsignatura(this));
         }
 
         private void lblogo_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new FrmInicio());
+            
         }
 
         private void MenuVertical_MouseDown(object sender, MouseEventArgs e)
@@ -152,20 +165,39 @@ namespace Proyecto_Final.Presentacion
 
         private void btnce_Click(object sender, EventArgs e)
         {
-            FrmEstudiantesActivos frmEstudiantesActivos = new FrmEstudiantesActivos();
-            frmEstudiantesActivos.Show();
+            AbrirFormEnPanel(new FrmEstudiantesActivos());
+
+            //FrmEstudiantesActivos frmEstudiantesActivos = new FrmEstudiantesActivos();
+            //frmEstudiantesActivos.Show();
         }
 
         private void btncpen_Click(object sender, EventArgs e)
         {
-            FrmPensum frmPensum = new FrmPensum();
-            frmPensum.Show();
+            AbrirFormEnPanel(new FrmPensum());
+
+            //FrmPensum frmPensum = new FrmPensum();
+            //frmPensum.Show();
         }
 
         private void btncalificar_Click(object sender, EventArgs e)
         {
-            FrmCalificacion1 frmCalificacion1 = new FrmCalificacion1();
-            frmCalificacion1.Show();
+            AbrirFormEnPanel(new FrmCalificacion1(this));
+
+            //FrmCalificacion1 frmCalificacion1 = new FrmCalificacion1();
+            //frmCalificacion1.Show();
+        }
+
+        private void btnEnabledChangeEvent(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == null) return;
+            if (button.Enabled) button.BackColor = Color.FromArgb(0, 122, 204);
+            else button.BackColor = Color.Gray;
+        }
+
+        private void btnPeriodos_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new FrmAño(this));
         }
     }
 }

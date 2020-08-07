@@ -9,6 +9,6 @@ namespace Proyecto_Final.Entidades
     public class Seccion
     {
         public int id;
-        public string grado, nombre;
+        public string grado, nombre, docente;
     }
 }

@@ -87,12 +87,15 @@
             this.AcceptButton = this.btnSeleccionar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(380, 401);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSeleccionarSeccion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccionar Seccion";
             this.Load += new System.EventHandler(this.FrmSeleccionarSeccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeccion)).EndInit();

@@ -53,6 +53,8 @@ namespace Proyecto_Final.Presentacion
                 dt = ds.Tables[0];
                 dgvUsuario.DataSource = dt;
 
+                dgvUsuario.Columns["ID"].Visible = false;
+
             }
             catch (Exception exception)
             {
@@ -75,6 +77,8 @@ namespace Proyecto_Final.Presentacion
                 txtContraseña.Text = dgvUsuario.CurrentRow.Cells["PASSWORD"].Value.ToString();
                 txtConfirmarContraseña.Text = dgvUsuario.CurrentRow.Cells["PASSWORD"].Value.ToString();
                 txtTipo.Text = dgvUsuario.CurrentRow.Cells["ROL"].Value.ToString();
+
+                
 
             }
         }
@@ -303,6 +307,14 @@ namespace Proyecto_Final.Presentacion
             for (int i = 0; i < dgvUsuario.Rows.Count; i++) dgvUsuario.Rows[i].Visible = true;
             dgvUsuario.CurrentCell = dgvUsuario.FirstDisplayedCell;
             dgvUsuario_CellClick(null, null);
+        }
+
+        private void btnEnabledChangeEvent(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == null) return;
+            if (button.Enabled) button.BackColor = Color.FromArgb(0, 122, 204);
+            else button.BackColor = Color.Gray;
         }
     }
 }

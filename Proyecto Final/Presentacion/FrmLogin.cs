@@ -24,51 +24,57 @@ namespace Proyecto_Final
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            usuario.username = txtUsuario.Text;
-            usuario.password = Encriptar.GetSHA256(txtContraseña.Text);
-
-            DataSet ds = FLogin.ValidarLogin(usuario);
-            DataTable dt = ds.Tables[0];
-
-            if (dt.Rows.Count > 0)
+            try
             {
-                if (Convert.ToBoolean(dt.Rows[0]["ELIMINADO"]))
+                usuario.username = txtUsuario.Text;
+                usuario.password = Encriptar.GetSHA256(txtContraseña.Text);
+
+                DataSet ds = FLogin.ValidarLogin(usuario);
+                DataTable dt = ds.Tables[0];
+
+                if (dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("Este usuario ha sido eliminado contacte con un administrador");
+                    if (Convert.ToBoolean(dt.Rows[0]["ELIMINADO"]))
+                    {
+                        MessageBox.Show("Este usuario ha sido eliminado contacte con un administrador");
+                        txtUsuario.Clear();
+                        txtContraseña.Clear();
+                        return;
+
+                    };
+                    usuario.id = Convert.ToInt32(dt.Rows[0]["ID"]);
+                    usuario.nombre = dt.Rows[0]["NOMBRE"].ToString();
+                    usuario.cedula = dt.Rows[0]["CEDULA"].ToString();
+                    usuario.telefono = dt.Rows[0]["TELEFONO"].ToString();
+                    usuario.correo = dt.Rows[0]["CORREO"].ToString();
+                    usuario.rol = dt.Rows[0]["ROL"].ToString();
+                    usuario.eliminado = Convert.ToBoolean(dt.Rows[0]["ELIMINADO"]);
+                    FrmPrincipal principal = new FrmPrincipal(this, usuario);
+                    principal.Show();
+                    this.Enabled = false;
+                    this.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrectos");
                     txtUsuario.Clear();
                     txtContraseña.Clear();
-                    return;
-
-                };
-                usuario.id = Convert.ToInt32(dt.Rows[0]["ID"]);
-                usuario.nombre = dt.Rows[0]["NOMBRE"].ToString();
-                usuario.cedula = dt.Rows[0]["CEDULA"].ToString();
-                usuario.telefono = dt.Rows[0]["TELEFONO"].ToString();
-                usuario.correo = dt.Rows[0]["CORREO"].ToString();
-                usuario.rol = dt.Rows[0]["ROL"].ToString();
-                usuario.eliminado = Convert.ToBoolean(dt.Rows[0]["ELIMINADO"]);
-                FrmPrincipal principal = new FrmPrincipal(this, usuario);
-                principal.Show();
-                this.Enabled = false;
-                this.Visible = false;
-            }
-            else
+                }
+                // Para mostrar datos del usuario en un form pequeño
+                //MessageBox.Show(
+                //       usuario.id + Environment.NewLine +
+                //       usuario.cedula + Environment.NewLine +
+                //       usuario.correo + Environment.NewLine +
+                //       usuario.nombre + Environment.NewLine +
+                //       usuario.password + Environment.NewLine +
+                //       usuario.username + Environment.NewLine +
+                //       usuario.rol + Environment.NewLine +
+                //       usuario.telefono + Environment.NewLine
+                //       );
+            } catch (Exception exception)
             {
-                MessageBox.Show("Usuario y/o contraseña incorrectos");
-                txtUsuario.Clear();
-                txtContraseña.Clear();
+                MessageBox.Show(exception.Message);
             }
-            // Para mostrar datos del usuario en un form pequeño
-            MessageBox.Show(
-                   usuario.id + Environment.NewLine +
-                   usuario.cedula + Environment.NewLine +
-                   usuario.correo + Environment.NewLine +
-                   usuario.nombre + Environment.NewLine +
-                   usuario.password + Environment.NewLine +
-                   usuario.username + Environment.NewLine +
-                   usuario.rol + Environment.NewLine +
-                   usuario.telefono + Environment.NewLine
-                   );
         }
 
         private void txtContraseña_KeyDown(object sender, KeyEventArgs e)

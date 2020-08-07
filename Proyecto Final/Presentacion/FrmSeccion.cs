@@ -15,7 +15,7 @@ namespace Proyecto_Final.Presentacion
     public partial class FrmSeccion : Form
     {
         DataTable dt = new DataTable();
-        DataTable grados;
+        DataTable grados, docentes;
         private string estado;
         public FrmSeccion()
         {
@@ -43,6 +43,7 @@ namespace Proyecto_Final.Presentacion
                 txtID.Text = dgvSeccion.CurrentRow.Cells["ID"].Value.ToString();
                 txtGrado.Text = dgvSeccion.CurrentRow.Cells["GRADO"].Value.ToString();
                 txtSeccion.Text = dgvSeccion.CurrentRow.Cells["NOMBRE"].Value.ToString();
+                txtDocente.Text = dgvSeccion.CurrentRow.Cells["DOCENTE"].Value.ToString();
             }
         }
         private void cambios(string opcion)
@@ -57,6 +58,9 @@ namespace Proyecto_Final.Presentacion
                     btnAceptar.Enabled = true;
                     btnCancelar.Enabled = true;
 
+                    txtDocente.Enabled = true;
+                    txtSeccion.Enabled = true;
+
                     txtGrado.Enabled = true;
                     txtSeccion.Enabled = true;
 
@@ -67,6 +71,7 @@ namespace Proyecto_Final.Presentacion
 
                     estado = "agregando";
                     CargarComboBoxGrados();
+                    CargarComboBoxDocentes();
                     break;
 
                 //cuando presiono modificar seccion se realiza la siguiente configuracion en la ventana
@@ -77,12 +82,15 @@ namespace Proyecto_Final.Presentacion
                     btnAceptar.Enabled = true;
                     btnCancelar.Enabled = true;
 
+                    txtDocente.Enabled = true;
+
                     txtGrado.Enabled = true;
                     txtSeccion.Enabled = true;
 
                     dgvSeccion.Enabled = false;
 
                     estado = "modificando";
+                    CargarComboBoxDocentes();
                     break;
 
                 //cuando presiono cancelar se realiza la siguiente configuracion en la ventana
@@ -95,6 +103,9 @@ namespace Proyecto_Final.Presentacion
 
                     txtID.Enabled = false;
                     txtGrado.Enabled = false;
+                    txtSeccion.Enabled = false;
+
+                    txtDocente.Enabled = false;
 
                     dgvSeccion.Enabled = true;
                     dgvSeccion_CellClick(null, null);
@@ -143,8 +154,11 @@ namespace Proyecto_Final.Presentacion
             try
             {
                 DataSet ds = FSeccion.GetAll();
+                docentes = FAsignatura.CargarDocentes().Tables[0];
+                CargarComboBoxDocentes();
                 dt = ds.Tables[0];
                 dgvSeccion.DataSource = dt;
+                dgvSeccion.Columns["ID"].Visible = false;
 
             }
             catch (Exception exception)
@@ -161,13 +175,19 @@ namespace Proyecto_Final.Presentacion
             {
                 MessageBox.Show("Elija el nombre de la sección");
                 return;
-            } else if (txtGrado.Text == "")
+            }
+            else if (txtGrado.Text == "")
             {
                 MessageBox.Show("Debe agregar un grado primero");
                 return;
             }
+            else if (txtDocente.Text == "")
+            {
+                MessageBox.Show("Seleccione un maestro encargado");
+                return;
+            }
 
-            Seccion seccion = new Seccion();
+                Seccion seccion = new Seccion();
 
             //cuando se está agregando una nueva seccion el ID se borra
             //cuando se está modificando una seccion el ID se mantiene
@@ -176,6 +196,7 @@ namespace Proyecto_Final.Presentacion
             else seccion.id = 0;
             seccion.grado = txtGrado.Text;
             seccion.nombre = txtSeccion.Text;
+            seccion.docente = txtDocente.Text;
             try
             {
                 if (estado == "agregando")
@@ -201,6 +222,20 @@ namespace Proyecto_Final.Presentacion
         private void txtGrado_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void btnEnabledChangeEvent(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == null) return;
+            if (button.Enabled) button.BackColor = Color.FromArgb(0, 122, 204);
+            else button.BackColor = Color.Gray;
+        }
+
+        private void CargarComboBoxDocentes()
+        {
+            txtDocente.DataSource = docentes;
+            txtDocente.DisplayMember = "NOMBRE";
         }
     }
 }

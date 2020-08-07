@@ -36,6 +36,10 @@
               <Mapping SourceColumn="SECCION" DataSetColumn="SECCION" />
               <Mapping SourceColumn="GRADO" DataSetColumn="GRADO" />
               <Mapping SourceColumn="MATRICULA" DataSetColumn="MATRICULA" />
+              <Mapping SourceColumn="MAESTRO_ENCARGADO" DataSetColumn="MAESTRO_ENCARGADO" />
+              <Mapping SourceColumn="COORDINADOR_PEDAGOGICO" DataSetColumn="COORDINADOR_PEDAGOGICO" />
+              <Mapping SourceColumn="PERIODO" DataSetColumn="PERIODO" />
+              <Mapping SourceColumn="NOMBRE_CENTRO" DataSetColumn="NOMBRE_CENTRO" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -87,6 +91,34 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="MATRICULA" msprop:Generator_ColumnVarNameInTable="columnMATRICULA" msprop:Generator_ColumnPropNameInRow="MATRICULA" msprop:Generator_ColumnPropNameInTable="MATRICULAColumn" msprop:Generator_UserColumnName="MATRICULA" type="xs:int" minOccurs="0" />
+              <xs:element name="MAESTRO_ENCARGADO" msprop:Generator_ColumnVarNameInTable="columnMAESTRO_ENCARGADO" msprop:Generator_ColumnPropNameInRow="MAESTRO_ENCARGADO" msprop:Generator_ColumnPropNameInTable="MAESTRO_ENCARGADOColumn" msprop:Generator_UserColumnName="MAESTRO_ENCARGADO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COORDINADOR_PEDAGOGICO" msprop:Generator_ColumnVarNameInTable="columnCOORDINADOR_PEDAGOGICO" msprop:Generator_ColumnPropNameInRow="COORDINADOR_PEDAGOGICO" msprop:Generator_ColumnPropNameInTable="COORDINADOR_PEDAGOGICOColumn" msprop:Generator_UserColumnName="COORDINADOR_PEDAGOGICO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PERIODO" msprop:Generator_ColumnVarNameInTable="columnPERIODO" msprop:Generator_ColumnPropNameInRow="PERIODO" msprop:Generator_ColumnPropNameInTable="PERIODOColumn" msprop:Generator_UserColumnName="PERIODO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBRE_CENTRO" msprop:Generator_ColumnVarNameInTable="columnNOMBRE_CENTRO" msprop:Generator_ColumnPropNameInRow="NOMBRE_CENTRO" msprop:Generator_ColumnPropNameInTable="NOMBRE_CENTROColumn" msprop:Generator_UserColumnName="NOMBRE_CENTRO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

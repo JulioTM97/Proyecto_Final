@@ -18,9 +18,11 @@ namespace Proyecto_Final.Presentacion
         private string estado;
         DataTable dataTable;
         DataRow[] dataRow;
-        public FrmInstitucion()
+        FrmPrincipal frmPrincipal;
+        public FrmInstitucion(FrmPrincipal _frmPrincipal)
         {
             InitializeComponent();
+            frmPrincipal = _frmPrincipal;
         }
 
         private void FrmInstitucion_Load(object sender, EventArgs e)
@@ -44,6 +46,14 @@ namespace Proyecto_Final.Presentacion
                 cambios("no existe registro");
             }
             cambios("reinicio");
+
+            if (frmPrincipal.usuarioActivo.rol != "REGISTRO")
+            {
+                btnAceptar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnAgregarDatos.Enabled = false;
+                btnActualizarDatos.Enabled = false;
+            }
         }
 
         private void cambios(string opcion)
@@ -138,6 +148,14 @@ namespace Proyecto_Final.Presentacion
             {
                 MessageBox.Show(exception.Message + exception.StackTrace);
             }
+        }
+
+        private void btnEnabledChangeEvent(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == null) return;
+            if (button.Enabled) button.BackColor = Color.FromArgb(0, 122, 204);
+            else button.BackColor = Color.Gray;
         }
     }
 }

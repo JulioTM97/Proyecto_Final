@@ -19,14 +19,21 @@ namespace Proyecto_Final.Presentacion
         int auxID;
         DataTable dt;
         Calificacion calificacion;
-        public FrmCalificacion2()
+        FrmPrincipal frmPrincipal;
+        FrmCalificacion1 frmCalificacion1;
+        public FrmCalificacion2(FrmPrincipal _frmPrincipal, FrmCalificacion1 _frmCalificacion1)
         {
             InitializeComponent();
+            frmPrincipal = _frmPrincipal;
+            frmCalificacion1 = _frmCalificacion1;
         }
 
         private void FrmCalificacion2_Load(object sender, EventArgs e)
         {
-
+            if (frmPrincipal.usuarioActivo.rol != "REGISTRO")
+            {
+                btnImprimir.Enabled = false;
+            }
         }
 
         internal void ObtenerDatos(Seccion _seccion, Estudiante _estudiante,int _auxID)
@@ -43,7 +50,7 @@ namespace Proyecto_Final.Presentacion
             CargarDataGridView();
         }
 
-        private void CargarDataGridView()
+        internal void CargarDataGridView()
         {
             //el programa intenta obtener la lista de todos las secciones.
             try
@@ -65,6 +72,11 @@ namespace Proyecto_Final.Presentacion
         private void btnEvaluar_Click(object sender, EventArgs e)
         {
             if (dgvCalificacion.CurrentRow == null) return;
+            if (frmPrincipal.usuarioActivo.id != Convert.ToInt32(dgvCalificacion.CurrentRow.Cells["DOCENTE"].Value))
+            {
+                MessageBox.Show("Usted no es el docente de esta asignatura");
+                return;
+            }
             else
             {
                 calificacion = new Calificacion();
@@ -96,7 +108,7 @@ namespace Proyecto_Final.Presentacion
                     calificacion.extraordinario = Convert.ToInt32(dgvCalificacion.CurrentRow.Cells["EXTRAORDINARIO"].Value);
                 else calificacion.extraordinario = 0;
 
-                FrmCalificacion3 frmCalificacion3 = new FrmCalificacion3(calificacion, estudiante, seccion);
+                FrmCalificacion3 frmCalificacion3 = new FrmCalificacion3(this,calificacion, estudiante, seccion);
                 frmCalificacion3.Show();
             }
         }
@@ -110,6 +122,19 @@ namespace Proyecto_Final.Presentacion
         {
             FrmReporteCalificaciones reporteCalificaciones = new FrmReporteCalificaciones(auxID,seccion);
             reporteCalificaciones.Show();
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            frmPrincipal.AbrirFormEnPanel(frmCalificacion1);
+        }
+
+        private void btnEnabledChangeEvent(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == null) return;
+            if (button.Enabled) button.BackColor = Color.FromArgb(0, 122, 204);
+            else button.BackColor = Color.Gray;
         }
     }
 }

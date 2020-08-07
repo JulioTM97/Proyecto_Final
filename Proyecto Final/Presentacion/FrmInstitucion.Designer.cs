@@ -82,6 +82,7 @@
             this.btnAgregarDatos.TabIndex = 6;
             this.btnAgregarDatos.Text = "Agregar Datos";
             this.btnAgregarDatos.UseVisualStyleBackColor = false;
+            this.btnAgregarDatos.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnAgregarDatos.Click += new System.EventHandler(this.btnAgregarDatos_Click);
             // 
             // txtNombreDirector
@@ -193,6 +194,7 @@
             this.btnActualizarDatos.TabIndex = 7;
             this.btnActualizarDatos.Text = "Actualizar Datos";
             this.btnActualizarDatos.UseVisualStyleBackColor = false;
+            this.btnActualizarDatos.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnActualizarDatos.Click += new System.EventHandler(this.btnActualizarDatos_Click);
             // 
             // btnAceptar
@@ -209,6 +211,7 @@
             this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
@@ -225,6 +228,7 @@
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // groupBox1
@@ -258,11 +262,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label11.Location = new System.Drawing.Point(12, 67);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(304, 23);
+            this.label11.Size = new System.Drawing.Size(308, 24);
             this.label11.TabIndex = 29;
             this.label11.Text = "Consultar Datos de la Institución";
             // 

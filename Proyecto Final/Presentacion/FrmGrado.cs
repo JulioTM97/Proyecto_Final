@@ -30,6 +30,7 @@ namespace Proyecto_Final.Presentacion
                 DataSet ds = FGrado.GetAll();
                 dt = ds.Tables[0];
                 dgvGrado.DataSource = dt;
+                dgvGrado.Columns["ID"].Visible = false;
 
             }
             catch (Exception exception)
@@ -174,6 +175,14 @@ namespace Proyecto_Final.Presentacion
                 txtID.Text = dgvGrado.CurrentRow.Cells["ID"].Value.ToString();
                 txtGrado.Text = dgvGrado.CurrentRow.Cells["NOMBRE"].Value.ToString();
             }
+        }
+
+        private void btnEnabledChangeEvent(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == null) return;
+            if (button.Enabled) button.BackColor = Color.FromArgb(0, 122, 204);
+            else button.BackColor = Color.Gray;
         }
     }
 }

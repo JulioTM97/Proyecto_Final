@@ -19,9 +19,12 @@ namespace Proyecto_Final.Presentacion
         Estudiante estudiante;
         int auxID;
         string periodo;
-        public FrmCalificacion1()
+        FrmPrincipal frmPrincipal;
+        public FrmCalificacion1(FrmPrincipal _frmPrincipal)
         {
             InitializeComponent();
+            frmPrincipal = _frmPrincipal;
+            btnConsultar.Enabled = false;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -63,9 +66,11 @@ namespace Proyecto_Final.Presentacion
         private void dgvEstudiante_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvEstudiante.CurrentRow == null) return;
-            FrmCalificacion2 frmCalificacion2 = new FrmCalificacion2();
+            FrmCalificacion2 frmCalificacion2 = new FrmCalificacion2(frmPrincipal,this);
             frmCalificacion2.ObtenerDatos(seccion, estudiante, auxID);
-            frmCalificacion2.Show();
+
+            frmPrincipal.AbrirFormEnPanel(frmCalificacion2);
+            //frmCalificacion2.Show();
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -77,11 +82,24 @@ namespace Proyecto_Final.Presentacion
         {
             if (dgvEstudiante.CurrentRow != null)
             {
+                btnConsultar.Enabled = true;
                 estudiante = new Estudiante();
                 estudiante.nombre = dgvEstudiante.CurrentRow.Cells["NOMBRE"].Value.ToString();
                 estudiante.matricula = Convert.ToInt32(dgvEstudiante.CurrentRow.Cells["MATRICULA"].Value.ToString());
                 auxID = Convert.ToInt32(dgvEstudiante.CurrentRow.Cells["ESTUDIANTE_AUX_ID"].Value.ToString());
-            }
+            } else btnConsultar.Enabled = false;
+        }
+        private void btnEnabledChangeEvent(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == null) return;
+            if (button.Enabled) button.BackColor = Color.FromArgb(0, 122, 204);
+            else button.BackColor = Color.Gray;
+        }
+
+        private void btnMateriaPendiente_Click(object sender, EventArgs e)
+        {
+            frmPrincipal.AbrirFormEnPanel(new FrmMateriaPendiente());
         }
     }
 }

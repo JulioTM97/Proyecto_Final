@@ -82,6 +82,7 @@
             this.btnEliminarGrado.TabIndex = 2;
             this.btnEliminarGrado.Text = "Eliminar Grado";
             this.btnEliminarGrado.UseVisualStyleBackColor = false;
+            this.btnEliminarGrado.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnEliminarGrado.Click += new System.EventHandler(this.btnEliminarGrado_Click);
             // 
             // groupBox1
@@ -129,6 +130,7 @@
             this.btnAgregarGrado.TabIndex = 2;
             this.btnAgregarGrado.Text = "Agregar Grado";
             this.btnAgregarGrado.UseVisualStyleBackColor = false;
+            this.btnAgregarGrado.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnAgregarGrado.Click += new System.EventHandler(this.btnAgregarGrado_Click);
             // 
             // btnAceptar
@@ -139,12 +141,13 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(276, 266);
+            this.btnAceptar.Location = new System.Drawing.Point(268, 266);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(58, 23);
             this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
@@ -161,6 +164,7 @@
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnModificarGrado
@@ -177,6 +181,7 @@
             this.btnModificarGrado.TabIndex = 2;
             this.btnModificarGrado.Text = "Modificar Grado";
             this.btnModificarGrado.UseVisualStyleBackColor = false;
+            this.btnModificarGrado.EnabledChanged += new System.EventHandler(this.btnEnabledChangeEvent);
             this.btnModificarGrado.Click += new System.EventHandler(this.btnModificarGrado_Click);
             // 
             // label2
@@ -200,11 +205,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.label11.Location = new System.Drawing.Point(29, 133);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(162, 23);
+            this.label11.Size = new System.Drawing.Size(161, 24);
             this.label11.TabIndex = 28;
             this.label11.Text = "Consultar Grado";
             // 

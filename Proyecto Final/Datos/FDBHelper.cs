@@ -5,12 +5,16 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Windows.Forms;
 
 namespace Proyecto_Final.Datos
 {
     public class FDBHelper
     {
         static string connectionString = @"Data Source = CentroEducativo.mssql.somee.com; Initial Catalog = CentroEducativo; User Id = JulioTM_SQLLogin_1; Password = 58k6vflf41;";
+        static int timeout = 600;
+        //Reemplacé la linea de abajo con la variable "timeout":
+        //cmd.CommandTimeout = Convert.ToInt16(ConfigurationManager.AppSettings.Get("connectionCommandTimeout"));
         public FDBHelper()
         {
 
@@ -25,7 +29,7 @@ namespace Proyecto_Final.Datos
             
             SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
-            cmd.CommandTimeout = 600;
+            cmd.CommandTimeout = timeout;
 
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -39,9 +43,10 @@ namespace Proyecto_Final.Datos
             }
             da.Fill(ds);
         }
-            catch (Exception)
+            catch (Exception exception)
             {
-                throw;
+                MessageBox.Show("Ha ocurrido un error con la conexion a la base de datos:"+Environment.NewLine+ exception.Message + exception.StackTrace);
+                //throw;
             }
             return ds;
         }
@@ -50,7 +55,7 @@ namespace Proyecto_Final.Datos
         {
             SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
-            cmd.CommandTimeout = Convert.ToInt16(ConfigurationManager.AppSettings.Get("connectionCommandTimeout"));
+            cmd.CommandTimeout = timeout;
             cmd.CommandType = CommandType.StoredProcedure;
 
             if (dbParams != null)
@@ -91,7 +96,7 @@ namespace Proyecto_Final.Datos
 
             SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
-            cmd.CommandTimeout = Convert.ToInt16(ConfigurationManager.AppSettings.Get("connectionCommandTimeout"));
+            cmd.CommandTimeout = timeout;
             cmd.CommandType = CommandType.StoredProcedure;
 
             if (dbParams != null)
@@ -118,7 +123,7 @@ namespace Proyecto_Final.Datos
         {
             SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
-            cmd.CommandTimeout = Convert.ToInt16(ConfigurationManager.AppSettings.Get("connectionCommandTimeout"));
+            cmd.CommandTimeout = timeout;
             cmd.CommandType = CommandType.StoredProcedure;
 
             if (dbParams != null)
@@ -135,9 +140,10 @@ namespace Proyecto_Final.Datos
             {
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                throw;
+                MessageBox.Show("Ha ocurrido un error con la conexion a la base de datos:" + Environment.NewLine + exception.Message + exception.StackTrace);
+                //throw;
             }
             finally
             {
@@ -152,7 +158,7 @@ namespace Proyecto_Final.Datos
             object retVal = null;
             SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
-            cmd.CommandTimeout = Convert.ToInt16(ConfigurationManager.AppSettings.Get("connectionCommandTimeout"));
+            cmd.CommandTimeout = timeout;
             cmd.CommandType = CommandType.StoredProcedure;
 
             if (dbParams != null)
@@ -169,9 +175,10 @@ namespace Proyecto_Final.Datos
             {
                 retVal = cmd.ExecuteScalar();
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                throw;
+                MessageBox.Show("Ha ocurrido un error con la conexion a la base de datos:" + Environment.NewLine + exception.Message + exception.StackTrace);
+                //throw;
             }
             finally
             {
@@ -214,7 +221,7 @@ namespace Proyecto_Final.Datos
         {
             SqlConnection cn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sqlSpName, cn);
-            cmd.CommandTimeout = Convert.ToInt16(ConfigurationManager.AppSettings.Get("connectionCommandTimeout"));
+            cmd.CommandTimeout = timeout;
             cmd.CommandType = CommandType.StoredProcedure;
 
             if (dbParams != null)
@@ -232,9 +239,10 @@ namespace Proyecto_Final.Datos
                 cmd.ExecuteNonQuery();
 
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                throw;
+                MessageBox.Show("Ha ocurrido un error con la conexion a la base de datos:" + Environment.NewLine + exception.Message + exception.StackTrace);
+                //throw;
             }
             finally
             {
